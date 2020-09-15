@@ -1,0 +1,24 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 11, in script
+    image overlay = Image("/images/badend2-1.png"), Color(alpha=.5)
+Exception: Not a displayable: (<'Image' u'/images/badend2-1.png'>, None)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 11, in script
+    image overlay = Image("/images/badend2-1.png"), Color(alpha=.5)
+  File "D:\renpy-7.3.5-sdk\renpy\ast.py", line 1017, in execute
+    renpy.exports.image(self.imgname, img)
+  File "D:\renpy-7.3.5-sdk\renpy\exports.py", line 375, in image
+    d = renpy.easy.displayable(d)
+  File "D:\renpy-7.3.5-sdk\renpy\easy.py", line 136, in displayable
+    raise Exception("Not a displayable: %r" % (d,))
+Exception: Not a displayable: (<'Image' u'/images/badend2-1.png'>, None)
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+W2 Dating Sim 1.0
+Mon Sep 14 20:56:54 2020

@@ -3,9 +3,14 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+
 define e = Character("Eileen")
-
-
+image eileen idle = Image("images/Miki_Casual_Smile_1_73.png")
+image eileen idle2 = Image("images/Miki_Casual_Open_Blush_73.png")
+image bg1 = Image("/images/lake/morning.jpg")
+#image overlay = Image("/images/badend2-1.png")
+transform overlay:
+    alpha 0.1
 # The game starts here.
 
 label start:
@@ -15,18 +20,21 @@ label start:
     # images directory to show it.
 
     scene bg room
-
+    play music "audio/default.mp3" fadeout 1.0
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
-
-    show eileen happy
-
+    show bg1
+    show eileen idle at top
+    
     # These display lines of dialogue.
+    
+    e "Hey, you. You're finally awake."
 
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    #show overlay at center
+    show eileen idle2 at top
+    
+    e "Wait... was that my line?!?"
 
     # This ends the game.
 
