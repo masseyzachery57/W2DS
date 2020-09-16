@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-
+define nar = Character(what_italic=True)
 define e = Character("Eileen")
 image eileen idle = Image("images/Miki_Casual_Smile_1_73.png")
 image eileen idle2 = Image("images/Miki_Casual_Open_Blush_73.png")
@@ -37,5 +37,21 @@ label start:
     e "Wait... was that my line?!?"
 
     # This ends the game.
+    
+    #Start of actual dialogue
+    "ALARM" "BEEP, BEEP, BEEP"
+    "THUMP"
+    nar "Ugh, another day of school. Better get up so I can go get some breakfast."
+    
+    jump day1_breakfast
+    
+    return
+    
+label day1_breakfast:
+
+    "test"
+    
+    
+    
 
     return
