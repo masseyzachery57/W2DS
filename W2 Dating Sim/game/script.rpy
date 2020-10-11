@@ -70,10 +70,10 @@ label breakfastDay1:
     nar "Now where did I put my ID..."
 
     menu:
-        "Breakfast with Brooks"
+        "Breakfast with Brooks":
             jump breakfastDay1Brooks
             
-        "Breakfast with Cody"
+        "Breakfast with Cody":
             jump breakfastDay1Cody
             
     return
@@ -110,24 +110,24 @@ label dream1:
     e "Me"
     
     menu:
-        "Go to first class?"
+        "Go to first class?":
             jump class1Day1
             
-        "Just a little more sleep..."
+        "Just a little more sleep...":
             jump sleepDay1Class1
 
     return
     
-label class1Day1
+label class1Day1:
 
     menu:
-        "Sit with John"
+        "Sit with John":
             jump class1Day1John
             
-        "Sit with Brooks"
+        "Sit with Brooks":
             jump class1Day1Brooks
             
-        "Sit with both"
+        "Sit with both":
             jump class1Day1Both
 
     return
@@ -141,10 +141,10 @@ label sleepDay1Class1:
 label dream2:
 
     menu:
-        "Go to lunch"
+        "Go to lunch":
             jump lunchDay1Alone
             
-        "Just a couple more minutes..."
+        "Just a couple more minutes...":
             jump sleepDay1Lunch
 
     return
@@ -152,10 +152,10 @@ label dream2:
 label class1Day1John:
 
     menu:
-        "Lunch with John"
+        "Lunch with John":
             jump lunchDay1John
             
-        "Lunch alone"
+        "Lunch alone":
             jump lunchDay1Alone
     
     return
@@ -163,10 +163,10 @@ label class1Day1John:
 label class1Day1Brooks:
 
     menu:
-        "Lunch with Mark"
+        "Lunch with Mark":
             jump lunchDay1Mark
             
-        "Lunch alone"
+        "Lunch alone":
             jump lunchDay1Alone
 
     return
@@ -174,7 +174,7 @@ label class1Day1Brooks:
 label class1Day1Both:
 
     menu:
-        "Lunch alone"
+        "Lunch alone":
             jump lunchDay1Alone
 
     return
@@ -206,10 +206,10 @@ label sleepDay1Lunch:
 label dream3:
 
     menu:
-        "Go to second class"
+        "Go to second class":
             jump class2Day1
             
-        "So tired..."
+        "So tired...":
             jump sleepDay1Class2
 
     return
@@ -217,13 +217,13 @@ label dream3:
 label class2Day1:
 
     menu:
-        "Sit with Cody"
+        "Sit with Cody":
             jump class2Day1Cody
         
-        "Sit with Brooks"
+        "Sit with Brooks":
             jump class2Day1Brooks
             
-        "Sit with Trent"
+        "Sit with Trent":
             jump class2Day1Trent
             
     return
@@ -249,10 +249,10 @@ label class2Day1Trent:
 label sleepDay1Class2:
 
     menu:
-        "I should take a walk through the woods"
+        "I should take a walk through the woods":
             jump walkDay1
             
-        "I want to dream more"
+        "I want to dream more":
             jump sleepDay1Walk
             
     return
@@ -266,10 +266,10 @@ label walkDay1:
 label sleepDay1Walk:
 
     menu:
-        "I'm hungry...I should go to dinner"
+        "I'm hungry...I should go to dinner":
             jump dinnerDay1
             
-        "MORE"
+        "MORE":
             jump sleepDay1Dinner
             
     return
@@ -277,13 +277,13 @@ label sleepDay1Walk:
 label dinnerDay1:
 
     menu:
-        "FKC with Mark"
+        "FKC with Mark":
             jump kfcDay1
             
-        "Dinner with Brooks, Cody and John"
+        "Dinner with Brooks, Cody and John":
             jump dinnerDay1BCJ
             
-        "Dinner with Caleb and Trent"
+        "Dinner with Caleb and Trent":
             jump dinnerDay1CT
             
     return
@@ -291,10 +291,10 @@ label dinnerDay1:
 label kfcDay1:
 
     menu:
-        "Watch the scary movie"
+        "Watch the scary movie":
             jump movieDay1
         
-        "Go to bed"
+        "Go to bed":
             jump sleepDay1Night
             
     return
@@ -302,10 +302,10 @@ label kfcDay1:
 label dinnerDay1BCJ:
 
     menu:
-        "Watch the scary movie"
+        "Watch the scary movie":
             jump movieDay1
         
-        "Go to bed"
+        "Go to bed":
             jump sleepDay1Night
             
     return
@@ -313,10 +313,10 @@ label dinnerDay1BCJ:
 label dinnerDay1CT:
 
     menu:
-        "Watch the scary movie"
+        "Watch the scary movie":
             jump movieDay1
         
-        "Go to bed"
+        "Go to bed":
             jump sleepDay1Night
             
     return
@@ -327,13 +327,13 @@ label sleepDay1Dinner:
     
     return
     
-label dream4
+label dream4:
 
     menu:
-        "Watch the scary movie"
+        "Watch the scary movie":
             jump movieDay1
         
-        "Go to bed"
+        "Go to bed":
             jump sleepDay1Night
             
     return
@@ -341,22 +341,22 @@ label dream4
 label movieDay1:
 
     menu:
-        "Cling to Brooks"
+        "Cling to Brooks":
             jump movieDay1Cling
         
-        "Cling to Caleb"
+        "Cling to Caleb":
             jump movieDay1Cling
             
-        "Cling to Cody"
+        "Cling to Cody":
             jump movieDay1Cling
             
-        "Cling to Trent"
+        "Cling to Trent":
             jump movieDay1Cling
             
-        "Cling to Mark"
+        "Cling to Mark":
             jump movieDay1Cling
             
-        "Cling to John"
+        "Cling to John":
             jump movieDay1Cling
         
     return
@@ -400,22 +400,22 @@ label homeworkDay2:
 label lunchDay2:
 
     menu:
-        "Lunch with Brooks"
+        "Lunch with Brooks":
             jump lunchDay2Brooks
         
-        "Lunch with Caleb"
+        "Lunch with Caleb":
             jump lunchDay2Caleb
         
-        "Lunch with Cody"
+        "Lunch with Cody":
             jump lunchDay2Cody
         
-        "Lunch with Trent"
+        "Lunch with Trent":
             jump lunchDay2Trent
         
-        "FKC with Mark"
+        "FKC with Mark":
             jump kfcDay2Lunch
         
-        "Lunch with John"
+        "Lunch with John":
             jump lunchDay2John
             
     return
@@ -468,30 +468,30 @@ label afternoonDay2Brooks:
     
     return
     
-label dinnerDay2
+label dinnerDay2:
 
     menu:
-        "Dinner with Brooks, John and Cody"
-            label dinnerDay2BJC
+        "Dinner with Brooks, John and Cody":
+            jump dinnerDay2BJC
         
-        "Dinner with Caleb, Trent and Cole"
-            label dinnerDay2CTC
+        "Dinner with Caleb, Trent and Cole":
+            jump dinnerDay2CTC
             
-        "FKC with Mark"
-            label kfcDay2Dinner
+        "FKC with Mark":
+            jump kfcDay2Dinner
             
     return
     
 label dinnerDay2BJC:
 
     menu:
-        "Evening stroll with Brooks"
+        "Evening stroll with Brooks":
             jump walkDay2
             
-        "Evening stroll with John"
+        "Evening stroll with John":
             jump walkDay2
             
-        "Evening stroll with Cody"
+        "Evening stroll with Cody":
             jump walkDay2
             
     return
@@ -499,13 +499,13 @@ label dinnerDay2BJC:
 label dinnerDay2CTC:
 
     menu:
-        "Evening stroll with Trent"
+        "Evening stroll with Trent":
             jump walkDay2
             
-        "Evening stroll with Caleb"
+        "Evening stroll with Caleb":
             jump walkDay2
             
-        "Evening stroll with Cole"
+        "Evening stroll with Cole":
             jump walkDay2
             
     return
@@ -543,25 +543,25 @@ label dream6:
 label finalScene:
 
     menu:
-        "Church with Brooks"
+        "Church with Brooks":
             jump church
             
-        "Church with Cody"
+        "Church with Cody":
             jump church
             
-        "Church with John"
+        "Church with John":
             jump church
             
-        "Church with Mark"
+        "Church with Mark":
             jump church
             
-        "Church with Caleb"
+        "Church with Caleb":
             jump church
             
-        "Church with Trent"
+        "Church with Trent":
             jump church
             
-        "Church with Caleb"
+        "Church with Caleb":
             jump church
             
     return
