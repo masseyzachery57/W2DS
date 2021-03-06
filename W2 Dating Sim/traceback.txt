@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 71, in script
-    nar "Now where did I put my ID..."
-ScriptError: could not find label 'sleepday1_done'.
+  File "game/script.rpy", line 646, in script
+    Brooks "Do you want my blanket? I'm not using it."
+Exception: Sayer 'Brooks' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 71, in script
-    nar "Now where did I put my ID..."
-  File "D:\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'sleepday1_done'.
+  File "game/script.rpy", line 646, in script
+    Brooks "Do you want my blanket? I'm not using it."
+  File "D:\renpy-7.3.5-sdk\renpy\ast.py", line 678, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "D:\renpy-7.3.5-sdk\renpy\ast.py", line 576, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'Brooks' is not defined.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 W2 Dating Sim 1.0
-Wed Sep 16 12:29:44 2020
+Sat Mar 06 14:38:28 2021

@@ -116,6 +116,8 @@ label breakfastDay1Brooks:
 
     #in DC
     
+    show dcTables with Dissolve(.5)
+    
     #you
     "An RA this semester? No way! That is sooooo hot!"
     
@@ -142,6 +144,8 @@ label breakfastDay1Brooks:
 label breakfastDay1Cody:
     
     #In DC
+    
+    show dcTables with Dissolve(.5)
     
     #you
     "I would love to eat with you!"
@@ -203,8 +207,9 @@ label dream1:
     return
     
 label class1Day1:
-
+    show lbhOutside with Dissolve(.5)
     nar "Finally here...let's see."
+    show lbhClass with Dissolve(.5)
     nar "Oh, I know a bunch of people in this class!"
     nar "Let's see...I can sit with Brooks or I could go sit with John. I haven't seen him yet."
     
@@ -332,6 +337,8 @@ label lunchDay1Alone:
 
 label lunchDay1Mark:
 
+    show fkc with Dissolve(.5)
+    
     "Yo what are you gonna get?"
     
     "FKC?"
@@ -648,7 +655,7 @@ label movieDay1:
 
     "RAWR"
 
-		"EEEEEEK!"
+    "EEEEEEK!"
     "Oh gosh this movie is scary! It got me again...I need to relax and be safe"
 
     menu:
