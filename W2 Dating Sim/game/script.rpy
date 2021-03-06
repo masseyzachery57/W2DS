@@ -6,6 +6,7 @@
 define nar = Character(what_italic=True)
 define e = Character("Eileen")
 default clingee = "Nobody"
+default walker = "Nobody"
 image eileen idle = Image("images/Miki_Casual_Smile_1_73.png")
 image eileen idle2 = Image("images/Miki_Casual_Open_Blush_73.png")
 image bg1 = Image("/images/lake/morning.jpg")
@@ -591,6 +592,10 @@ label dinnerDay1BCJ:
     
 label dinnerDay1CT:
 
+    "They say nothing, but gnaw on their food and stare at you."
+    
+    "You promptly leave."
+
     menu:
         "Watch the scary movie":
             jump movieDay1
@@ -643,38 +648,45 @@ label movieDay1:
 
     "RAWR"
 
+		"EEEEEEK!"
     "Oh gosh this movie is scary! It got me again...I need to relax and be safe"
 
     menu:
         "Cling to Brooks":
             $ clingee = "Brooks"
+            nar "You cling to Brooks, and he seems happy. You enjoy the rest of the movie together."
             jump movieDay1Cling
         
         "Cling to Caleb":
             $ clingee = "Caleb"
+            nar "You cling to Caleb, and he seems happy. You enjoy the rest of the movie together."
             jump movieDay1Cling
             
         "Cling to Cody":
             $ clingee = "Cody"
+            nar "You cling to Cody, and he seems happy. You enjoy the rest of the movie together."
             jump movieDay1Cling
             
         "Cling to Trent":
             $ clingee = "Trent"
+            nar "You cling to Trent, and he seems happy. You enjoy the rest of the movie together."
             jump movieDay1Cling
             
         "Cling to Mark":
             $ clingee = "Mark"
+            nar "You cling to Mark, and he seems happy. You enjoy the rest of the movie together."
             jump movieDay1Cling
             
         "Cling to John":
             $ clingee = "John"
+            nar "You cling to John, and he seems happy. You enjoy the rest of the movie together."
             jump movieDay1Cling
         
     return
     
 label movieDay1Cling:
-    
-    "He seems ok with it, and you enjoy the rest of the movie."
+
+    nar "What a long day, I suppose it is time for bed."
 
     jump sleepDay1Night
     
@@ -687,6 +699,22 @@ label sleepDay1Night:
     return
     
 label dream5:
+
+    "Ah, where am I? This doesn't look like a normal restaurant."
+    
+    "I'm just a salisbury steak looking to be eaten."
+    
+    "Wait...these ingredients. What do they have in common..."
+    
+    "Barley, oats, quinoa...tofu, beans, peanuts...OH NO!"
+    
+    "I'M IN A VEGAN RESTAURANT! I'LL NEVER GET EATEN!"
+
+    "NOOOOOOOOOOOOOOOOOOOOOOOOOO!"
+    
+    "ALARM" "BEEP BEEP BEEP"
+    
+    "what."
 
     jump breakfastDay2
     
@@ -841,6 +869,16 @@ label lunchDay2Cody:
     return
     
 label lunchDay2Trent:
+
+    "..."
+    
+    "And THAT is why we aren't allowed to date our students."
+    
+    "I mean yeah, I feel like that was common sense and really didn't need a scientific study?"
+    
+    "Anyways, we are just talking."
+    
+    "Yeah, let's go."
     
     jump afternoonDay2Brooks
     
@@ -1008,14 +1046,17 @@ label dinnerDay2CTC:
 
     menu:
         "Evening stroll with Trent":
+            $ walker = "Trent"
             "Hey Trent, wanna go on a walk?"
             jump walkDay2
             
         "Evening stroll with Caleb":
+            $ walker = "Caleb"
             "Hey Caleb, wanna go on a walk?"
             jump walkDay2
             
         "Evening stroll with Cole":
+            $ walker = "Cole"
             "Hey Cole, wanna go on a walk?"
             jump walkDay2
             
@@ -1032,12 +1073,18 @@ label FKCDay2Dinner:
     "Hey Mark, let's go on a walk together."
     
     "OK"
+    
+    $ walker = "Mark"
 
     jump walkDay2
     
     return
    
 label walkDay2:
+
+    nar "Why isn't he saying anything?"
+    
+    "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
 
     jump smashBros
     
@@ -1087,6 +1134,22 @@ label sleepDay2Night:
     
 label dream6:
 
+    "Who should I go with to Church tomorrow..."
+    
+    "I mean, it has to be someone I like, it's basically asking them out."
+    
+    "Everything I've done comes down to this."
+    
+    "This is so important."
+
+    "I can't wait."
+    
+    "ALARM" "BEEP BEEP BEEP"
+    
+    nar "Well, for once my dream was accurate."
+    
+    nar "Here I go."
+
     jump finalScene
     
     return
@@ -1098,8 +1161,6 @@ label finalScene:
     "Hey, who were you thinking of going to Church with?"
     
     "Uhhh, good question. This is very important, so give me a second to think..."
-    
-    nar "This is basically asking them out, this is the most important choice I'll make..."
 
     menu:
         "Church with Brooks":
@@ -1109,26 +1170,40 @@ label finalScene:
             jump church
             
         "Church with Cody":
+            "Cody, let's go together."
+            
+            "Ok."
             jump church
             
         "Church with John":
+            "John, John, let's get going!"
+            
+            "Alright!"
             jump church
             
         "Church with Mark":
+            "Mark, let's go and get some chicken afterwards!"
+            
+            "Sounds like a plan to me!"
             jump church
             
         "Church with Caleb":
+            "Caleb, let's go."
+            
+            "Heck yeah!"
             jump church
             
         "Church with Trent":
-            jump church
+            "Pineapple sauce!"
             
-        "Church with Caleb":
+            "And pancakes!"
             jump church
             
     return
     
 label church:
+
+    "You attend Church with him and have a great time, and this is just the beginning of your future together!"
 
     return
             
