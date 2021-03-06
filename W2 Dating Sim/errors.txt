@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 475: expected ':' not found.
-    label dinnerDay2BJC
-                       ^
-
-File "game/script.rpy", line 478: expected ':' not found.
-    label dinnerDay2CTC
-                       ^
-
-File "game/script.rpy", line 481: expected ':' not found.
-    label kfcDay2Dinner
-                       ^
+File "game/script.rpy", line 677: expected statement.
+    "You cling to " + $ clingee
+                    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Oct 11 15:28:34 2020
+Sat Mar 06 13:47:49 2021
