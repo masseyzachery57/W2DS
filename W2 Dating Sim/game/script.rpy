@@ -26,7 +26,7 @@ image library = Image("/images/library/library.png")
 image lbhClass = Image("/images/lbh/lbhClass.png")
 image lbhOutside = Image("/images/lbh/lbhOutside.png")
 image dormDorm = Image("/images/dorm/dorm.png")
-image dormHallway = Image("/images/dorm/dormHallway.png")
+image dormHallway = Image("/images/dorm/Hallway.png")
 image dormLounge = Image("/images/dorm/lounge.png")
 image dcLine = Image("/images/dc/dcLine.png")
 image dcOutside = Image("/images/dc/dcOutside.png")
@@ -327,6 +327,8 @@ label class1Day1Both:
 
 label lunchDay1Alone:
 
+    show dcTables with Dissolve(.5)
+
     nar "Well this is lame...where are the Wright second boyyyys"
     
     nar "Anyways, time for another class..."
@@ -359,12 +361,16 @@ label lunchDay1Mark:
     
 label lunchDay1John:
 
+    show dcLine with Dissolve(.5)
+
     "Hey John, so how have you been"
     
     "I've been fabulous! How are you?"
     
     "I'm good...thanks for asking!"
     
+    show dcTables with Dissolve(.5)
+
     #Johns story
     "...and that's why you should never sleep with a rainbow narwhal!"
     
@@ -404,7 +410,13 @@ label dream3:
 
 label class2Day1:
 
-    nar "Ah! Time for my next class...let's see...is anyone I know here?"
+    show shOutside with Dissolve(.5)
+
+    nar "Ah! Time for my next class..."
+    
+    show shClass with Dissolve(.5)
+    
+    nar "let's see...is anyone I know here?"
     nar "Oh! There's Cody over there, and Brooks on the other side. And of course, Trent in the middle up front."
     menu:
         "Sit with Cody":
@@ -482,8 +494,13 @@ label sleepDay1Class2:
     
 label walkDay1:
 
+    show fountain with Dissolve(.5)
+
     nar "Wow...it's beautiful out today!"
     nar "..."
+
+    show woods with Dissolve(.5)
+
     nar "Is that someone in a tree?"
     
     "Hey! Are you ok?"
@@ -506,8 +523,12 @@ label walkDay1:
     
     "Alright, let's go."
     
+    show blackscreen with Dissolve(.5)
+
     nar "You two walk for awhile in complete silence, until you finally reach the end."
     
+    show fountain with Dissolve(.5)
+
     "Well, it was great walking with you, see you around!"
     
     jump dinnerDay1
@@ -529,6 +550,8 @@ label sleepDay1Walk:
     
 label dinnerDay1:
 
+    show dcOutside with Dissolve(.5)
+
     nar "Hm, what should I do for dinner?"
 
     menu:
@@ -549,6 +572,8 @@ label FKCDay1:
     
     "I know you do baby. After all, who doesn't love some fried chicken?"
     
+    show fkc with Dissolve(.5)
+
     "Let's eat!"
     
     nar "OM NOM NOM NOm NOM NOM NOM NOM NOM NOM!"
@@ -568,6 +593,8 @@ label FKCDay1:
     
 label dinnerDay1BCJ:
 
+    show dcLine with Dissolve(.5)
+
     "Wow, I wonder what they have today!"
     
     "Probably nothing good, it is the DC after all."
@@ -578,6 +605,8 @@ label dinnerDay1BCJ:
     
     "Oh yeah, you're right Brooks...it is unbearable after all."
     
+    show dcTables with Dissolve(.5)
+
     "...and that's why I agree with Kim Jong Un."
     
     "Haha! Nice!"
@@ -598,6 +627,8 @@ label dinnerDay1BCJ:
     return
     
 label dinnerDay1CT:
+
+    show dcTables with Dissolve(.5)
 
     "They say nothing, but gnaw on their food and stare at you."
     
@@ -643,17 +674,23 @@ label dream4:
     
 label movieDay1:
 
+    show beckerTheater with Dissolve(.5)
+
     "It's kinda cold down here."
 
-    Brooks "Do you want my blanket? I'm not using it."
+    "Do you want my blanket? I'm not using it."
 
     "Sure, thanks Brooks!"
+
+    show blackscreen with Dissolve(.5)
 
     nar "..."
     nar "..."
     nar "..."
 
     "RAWR"
+
+    show beckerTheater with Dissolve(.5)
 
     "EEEEEEK!"
     "Oh gosh this movie is scary! It got me again...I need to relax and be safe"
@@ -693,6 +730,8 @@ label movieDay1:
     
 label movieDay1Cling:
 
+    show blackscreen with Dissolve(.5)
+
     nar "What a long day, I suppose it is time for bed."
 
     jump sleepDay1Night
@@ -729,8 +768,13 @@ label dream5:
     
 label breakfastDay2:
 
+    show dcLine with Dissolve(.5)
+
     nar "Oh man I'm so tired. At least it's Saturday so I could sleep in some."
     nar "Breakfast should help me put some pep in my step."
+
+    show dcTables with Dissolve(.5)
+
     nar "gosh I love eggs."
     nar "Oh yeah, I still have Brook's blanket from last night! I should run up to his room and return that real quick."
 
@@ -739,6 +783,8 @@ label breakfastDay2:
     return
     
 label blanketReturn:
+
+    show dormHallway with Dissolve(.5)
 
     nar "Knock knock"
     "Brooks, you in there?"
@@ -758,6 +804,7 @@ label blanketReturn:
     
 label homeworkDay2:
 
+    show dormDorm with Dissolve(.5)
     nar "hmmm...the square root of twenty five x squared boils down to..."
     nar "Brooks!"
     nar "Wait no, I can't get distracted, its five x."
@@ -770,8 +817,12 @@ label homeworkDay2:
     
 label lunchDay2:
 
+    show dcOutside Dissolve(.5)
+
     nar "I doubt anyone will be here to eat with me this late."
-    
+
+    show dcLine Dissolve(.5)
+
     "Hey, isn't it a little ate to eat lunch?"
     "No way, you guys are all here?"
     "Yeah, lost track of time. We all have different things to do, but feel free to join whoever."
@@ -815,6 +866,8 @@ label lunchDay2Brooks:
     
     "Great!"
     
+    show dcTables with Dissolve(.5)
+
     "..."
     
     "...and THAT'S why all the Europeans...er...yeah"
@@ -847,6 +900,8 @@ label lunchDay2Caleb:
     
     "Well alright then."
     
+    show dcTables with Dissolve(.5)
+
     nar "Guess I'll eat alone since Cynthia left."
     
     jump afternoonDay2Brooks
@@ -862,6 +917,8 @@ label lunchDay2Cody:
     "Can I eat dinner with you?"
     
     "I mean it's lunch, but ok."
+
+    show dcTables with Dissolve(.5)
     
     "...and that's why being a CMC is great."
     
@@ -876,6 +933,8 @@ label lunchDay2Cody:
     return
     
 label lunchDay2Trent:
+
+    show dcTables with Dissolve(.5)
 
     "..."
     
@@ -892,6 +951,8 @@ label lunchDay2Trent:
     return
     
 label FKCDay2Lunch:
+
+    show fkc with Dissolve(.5)
 
     "..."
 
@@ -910,6 +971,8 @@ label FKCDay2Lunch:
     return
     
 label lunchDay2John:
+
+    show dcTables with Dissolve(.5)
 
     "..."
 
@@ -959,13 +1022,19 @@ label afternoonDay2Mark:
     
 label afternoonDay2Brooks:
 
+    show dcOutside with Dissolve(.5)
+
     "Hi Brooks! What do you wanna do?"
     
     "Oh hey. I was thinking we could just chill in the lounge or somewhere quiet."
     
     "Yeah, lets do that."
+
+    show blackscreen with Dissolve(.5)
     
     "..."
+
+    show lounge with Dissolve(.5)
     
     "So that's why you went to Wright 2 out of all the other choices."
     
@@ -982,6 +1051,8 @@ label afternoonDay2Brooks:
     return
     
 label dinnerDay2:
+
+    show dcOutside with Dissolve(.5)
 
     "Oh hey! You going to dinner?"
     
@@ -1010,8 +1081,12 @@ label dinnerDay2:
     
 label dinnerDay2BJC:
 
+    show blackscreen with Dissolve(.5)
+
     "..."
     
+    show dcTables with Dissolve(.5)
+
     "Yeah, we have a trebs concert next week if you would like to join!"
     
     "I think I'll pass on this one, thank you though."
@@ -1039,7 +1114,11 @@ label dinnerDay2BJC:
     
 label dinnerDay2CTC:
 
+    show blackscreen with Dissolve(.5)
+
     "..."
+
+    show dcTables with Dissolve(.5)
     
     "Yeah, we have a Smash Bros. Tournament next week if you would like to join!"
     
@@ -1071,6 +1150,8 @@ label dinnerDay2CTC:
     
 label FKCDay2Dinner:
 
+    show fkc with Dissolve(.5)
+
     "MUNCH MUNCH"
     
     "I LOVE FKC"
@@ -1089,6 +1170,8 @@ label FKCDay2Dinner:
    
 label walkDay2:
 
+    show fountain with Dissolve(.5)
+
     nar "Why isn't he saying anything?"
     
     "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
@@ -1098,6 +1181,8 @@ label walkDay2:
     return
     
 label smashBros:
+
+    show lounge with Dissolve(.5)
 
     "Alright, practicing in some big free for alls! The best way to warm up."
     
@@ -1128,6 +1213,8 @@ label smashBros:
     return
     
 label sleepDay2Night:
+
+    show dormDorm with Dissolve(.5)
 
     "Oh, Church is tomorrow...I wonder who I should ask to go with me"
     
