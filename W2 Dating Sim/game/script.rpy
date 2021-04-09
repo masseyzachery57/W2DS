@@ -66,7 +66,8 @@ label start:
     # This ends the game.
     
     #Start of actual dialogue
-    
+    hide eileen idle
+    hide eileen idle2
     show blackscreen with Dissolve(.5)
     stop music
      
@@ -87,6 +88,7 @@ label breakfastDay1:
     $ sleepDay1_flag = False
 
     show dormDorm with Dissolve(.5)
+    hide blackscreen
     play music "audio/default.mp3"
 
     nar "I guess I have to get up eventually."
@@ -96,6 +98,8 @@ label breakfastDay1:
     
     show blackscreen with Dissolve(.5)
     show dcOutside with Dissolve(.5)
+    hide dormDorm
+    hide blackscreen
     
     "Oh hi Brooks! Didn't think you would be up this early...I know I almost wasn't!"
     
@@ -117,7 +121,7 @@ label breakfastDay1Brooks:
     #in DC
     
     show dcTables with Dissolve(.5)
-    
+    hide dcOutside
     #you
     "An RA this semester? No way! That is sooooo hot!"
     
@@ -146,7 +150,7 @@ label breakfastDay1Cody:
     #In DC
     
     show dcTables with Dissolve(.5)
-    
+    hide dcOutside
     #you
     "I would love to eat with you!"
     
