@@ -5,6 +5,11 @@
 
 define nar = Character(what_italic=True)
 define e = Character("Eileen")
+define brooks = Character("Brooks")
+define caleb = Character("Caleb")
+define cody = Character("Cody")
+define john = Character("John")
+define trent = Character("Trent")
 default clingee = "Nobody"
 default walker = "Nobody"
 image eileen idle = Image("images/Miki_Casual_Smile_1_73.png")
@@ -33,6 +38,46 @@ image dcOutside = Image("/images/dc/dcOutside.png")
 image dcTables = Image("/images/dc/dcTables.png")
 image beckerOutside = Image("/images/becker/beckerOutside.png")
 image beckerTheater = Image("/images/becker/beckerTheater.png")
+
+image brooks embarrassed = Image("/images/guys/done/brooksembarrassed.png")
+image brooks flirt = Image("/images/guys/done/brooksflirt.png")
+image brooks neutral= Image("/images/guys/done/brooksneutral.png")
+image brooks sad = Image("/images/guys/done/brookssad.png")
+image brooks smile = Image("/images/guys/done/brookssmile.png")
+image brooks surprised = Image("/images/guys/done/brookssurprised.png")
+image brooks talking = Image("/images/guys/done/brookstalking.png")
+
+image caleb embarrassed = Image("/images/guys/done/calebembarrassed.png")
+image caleb flirt = Image("/images/guys/done/calebflirt.png")
+image caleb neutral= Image("/images/guys/done/calebneutral.png")
+image caleb sad = Image("/images/guys/done/calebsad.png")
+image caleb smile = Image("/images/guys/done/calebsmile.png")
+image caleb surprised = Image("/images/guys/done/calebsurprised.png")
+image caleb talking = Image("/images/guys/done/calebtalking.png")
+
+image cody embarrassed = Image("/images/guys/done/codyembarrassed.png")
+image cody flirt = Image("/images/guys/done/codyflirt.png")
+image cody neutral= Image("/images/guys/done/codyneutral.png")
+image cody sad = Image("/images/guys/done/codysad.png")
+image cody smile = Image("/images/guys/done/codysmile.png")
+image cody surprised = Image("/images/guys/done/codysurprised.png")
+image cody talking = Image("/images/guys/done/codytalking.png")
+
+image john embarrassed = Image("/images/guys/done/johnembarrassed.png")
+image john flirt = Image("/images/guys/done/johnflirt.png")
+image john neutral= Image("/images/guys/done/johnneutral.png")
+image john sad = Image("/images/guys/done/johnsad.png")
+image john smile = Image("/images/guys/done/johnsmile.png")
+image john surprised = Image("/images/guys/done/johnsurprised.png")
+image john talking = Image("/images/guys/done/johntalking.png")
+
+image trent embarrassed = Image("/images/guys/done/trentembarrassed.png")
+image trent flirt = Image("/images/guys/done/trentflirt.png")
+image trent neutral= Image("/images/guys/done/trentneutral.png")
+image trent sad = Image("/images/guys/done/trentsad.png")
+image trent smile = Image("/images/guys/done/trentsmile.png")
+image trent surprised = Image("/images/guys/done/trentsurprised.png")
+image trent talking = Image("/images/guys/done/trenttalking.png")
 
 define fade = Fade(0.5, 0.0, 0.5)
 #image overlay = Image("/images/badend2-1.png")
@@ -101,10 +146,14 @@ label breakfastDay1:
     hide dormDorm
     hide blackscreen
     
+    show brooks neutral at top 
+
     "Oh hi Brooks! Didn't think you would be up this early...I know I almost wasn't!"
     
     "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time"
     
+    show cody sad at left
+
     nar "You see Cody sitting at a table alone out of the corner of your eye...Who do you choose to eat with?"
 
     menu:
