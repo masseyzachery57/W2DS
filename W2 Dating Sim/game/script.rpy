@@ -10,6 +10,7 @@ define caleb = Character("Caleb")
 define cody = Character("Cody")
 define john = Character("John")
 define trent = Character("Trent")
+define mark = Character("Mark")
 default clingee = "Nobody"
 default walker = "Nobody"
 image eileen idle = Image("images/Miki_Casual_Smile_1_73.png")
@@ -148,9 +149,9 @@ label breakfastDay1:
     
     show brooks neutral at top 
 
-    "Oh hi Brooks! Didn't think you would be up this early...I know I almost wasn't!"
+    e "Oh hi Brooks! Didn't think you would be up this early...I know I almost wasn't!"
     
-    "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time"
+    brooks "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time"
     
     show cody sad at left
 
@@ -172,21 +173,21 @@ label breakfastDay1Brooks:
     show dcTables with Dissolve(.5)
     hide dcOutside
     #you
-    "An RA this semester? No way! That is sooooo hot!"
+    e "An RA this semester? No way! That is sooooo hot!"
     
     nar "Am I drooling? I certainly hope not!"
     
-    "Yeah, I'm enjoying it. By the way, here's a napkin to help you with that"
+    brooks "Yeah, I'm enjoying it. By the way, here's a napkin to help you with that..."
     
-    nar "EEK! He noticed. I gotta change the subject"
+    nar "EEK! He noticed. I gotta change the subject."
     
-    "Uhh...thanks! Alright, I gotta head to class."
+    e "Uhh...thanks! Alright, I gotta head to class."
     
-    "No way, I do too! You going to Sociology?"
+    brooks "No way, I do too! You going to Sociology?"
     
-    "Yeah, are you in that class?"
+    e "Yeah, are you in that class?"
     
-    "Yes ma'am! I'll see you there!"
+    brooks "Yes ma'am! I'll see you there!"
     
     nar "Oh my gosh, that was so fun. I can't wait to talk to him later!"
 
@@ -201,16 +202,16 @@ label breakfastDay1Cody:
     show dcTables with Dissolve(.5)
     hide dcOutside
     #you
-    "I would love to eat with you!"
+    e "I would love to eat with you!"
     
     #Cody etc
-    "...and THAT is why you should never walk with Yu-Gi-Oh cards in your left pocket!"
+    cody "...and THAT is why you should never walk with Yu-Gi-Oh cards in your left pocket!"
     
-    "Wow, that is SOOOO funny. You are hilarious Cody!"
+    e "Wow, that is SOOOO funny. You are hilarious Cody!"
     
-    "Why thank you!"
+    cody "Why thank you!"
     
-    "Alright, I gotta head to class. See you later."
+    e "Alright, I gotta head to class. See you later."
 
     jump class1Day1
     
@@ -233,16 +234,16 @@ label dream1:
     e "Would you like dinner? {p}A swim in the lake? {p}Or perhaps..."
 
     show eileen idle2 at top
-    e "Me"
+    #e "Me"
     
     
     
     
-    "Oh hey Brooks, what are you doing here?"
+    e "Oh hey Brooks, what are you doing here?"
     
-    "You know, the usual. I'm glad you're here though, I have a question for you."
+    brooks "You know, the usual. I'm glad you're here though, I have a question for you."
     
-    "Oh...What is it?"
+    e "Oh...What is it?"
     
     nar "Could he really be asking me out???"
     
@@ -266,7 +267,7 @@ label class1Day1:
     nar "Oh, I know a bunch of people in this class!"
     nar "Let's see...I can sit with Brooks or I could go sit with John. I haven't seen him yet."
     
-    "Oh hey! We saved a seat for you between us if you wanted to sit here"
+    brooks "Oh hey! We saved a seat for you between us if you wanted to sit here"
     
     nar "Oh, I could sit next to both!"
 
@@ -290,13 +291,13 @@ label sleepDay1Class1:
     
 label dream2:
 
-    "Yeah, so my question is, would you like to eat lunch with me right now?"
+    brooks "Yeah, so my question is, would you like to eat lunch with me right now?"
     
     nar "OH MY WORD"
     
-    "Like a date? Are you asking me out?"
+    e "Like a date? Are you asking me out?"
     
-    "Uh, you know what. S-"
+    brooks "Uh, you know what. S-"
     
     "ALARM" "BEEP, BEEP, BEEP"
     
@@ -313,45 +314,57 @@ label dream2:
     
 label class1Day1John:
 
-    "Hey John! How are you today?"
+    e "Hey John! How are you today?"
     
-    "SHHHH! Class is starting, and I gotta practice my humming during it"
+    john "SHHHH! Class is starting, and I gotta practice my humming during it. Francoise has my notes covered."
     
     nar "Well that was weird"
     
-    "*procedes to hum the whole class period"
+    john "*procedes to hum the whole class period"
     
     nar "..."
     
     #stretching, you say
-    "Finally class is over!"
+    e "Finally class is over!"
     
-    "Yeah. I'm gonna head to lunch now. Would you like to join me?"
+    john "Yeah. I'm gonna head to lunch now. Would you like to join me?"
     
-    "Uhhhh well it is lunch time"
+    e "Uhhhh well it is lunch time"
     
     nar "I don't know, should I?"
 
     menu:
         "Lunch with John":
-            "Sure!"
+            e "Sure!"
             jump lunchDay1John
             
         "Lunch alone":
-            "No thanks. I uh, have plans. Sorry..."
+            e "No thanks. I uh, have plans. Sorry..."
             jump lunchDay1Alone
     
     return
     
 label class1Day1Brooks:
 
-    #IF YOU SAT BY BROOKS AT BREAKFAST SAY HI AGAIN or else say something else here
+    #IF YOU SAT BY BROOKS AT BREAKFAST SAY HI AGAIN or else say something else here?
+    
+    e "Well hello again Brooks."
+    
+    brooks "Hey!"
+    
+    e "Glad I could sit next to you today!"
+    
+    brooks "Anytime, looks like class is starting now."
+    
+    "..."
+    
+    e "Finally out! Oh hey, is that MARK?"
 
     menu:
         "Lunch with Mark":
-            "Hey Mark, let's go to lunch!"
+            e "Hey Mark, let's go to lunch!"
             
-            "Oh yeah sure! I'm going to FKC, meet me outside in five in my truck"
+            mark "Oh yeah sure! I'm going to FKC, meet me outside in five in my truck"
             jump lunchDay1Mark
             
         "Lunch alone":
@@ -361,15 +374,21 @@ label class1Day1Brooks:
     
 label class1Day1Both:
 
-    "Hey guys!"
+    e "Hey guys!"
     
-    "Hi!"
+    brooks "Hi!"
+    
+    john "Sup!"
     
     #class starts and stuff
     
-    "Alright see you guys later!"
+    nar "...class is boring today"
     
-    "Yeah see you too"
+    e "Alright, see you guys later!"
+    
+    john "Yeah see you too."
+    
+    brooks "See ya!"
 
     menu:
         "Lunch alone":
@@ -394,19 +413,25 @@ label lunchDay1Mark:
 
     show fkc with Dissolve(.5)
     
-    "Yo what are you gonna get?"
+    e "Yo what are you gonna get?"
     
-    "FKC?"
+    mark "FKC?"
     
-    "Yeah what from FKC?"
+    e "Yeah what from FKC?"
     
-    "I love FKC I'm getting FKC"
+    mark "I love FKC I'm getting FKC"
     
-    "...right"
+    e "...right"
     
     nar "FKC is good"
     
     #add more probably? Not sure where to go with this
+    
+    mark "*wink*"
+    
+    e "Oh, we gotta get it to go by the way. I have class."
+    
+    mark "Alright lets head back."
 
     jump class2Day1
     
@@ -416,18 +441,18 @@ label lunchDay1John:
 
     show dcLine with Dissolve(.5)
 
-    "Hey John, so how have you been"
+    e "Hey John, so how have you been?"
     
-    "I've been fabulous! How are you?"
+    john "I've been fabulous! How are you?"
     
-    "I'm good...thanks for asking!"
+    e "I'm good...thanks for asking!"
     
     show dcTables with Dissolve(.5)
 
     #Johns story
-    "...and that's why you should never sleep with a rainbow narwhal!"
+    john "...and that's why you should never sleep with a rainbow narwhal!"
     
-    "Well...right. I have class. See you later..."
+    e "Well...right. I have class. See you later..."
     nar "Talk about disturbing..."
 
     jump class2Day1
@@ -442,11 +467,11 @@ label sleepDay1Lunch:
     
 label dream3:
         
-    "You know what, Sure! Let's call this a date."
+    brooks "You know what, Sure! Let's call this a date."
     
-    "Oh my, of course I will, I've been waiting for so long!"
+    e "Oh my, of course I will, I've been waiting for so long!"
     
-    "In fact, let me get down on my knee..."
+    brooks "In fact, let me get down on my knee..."
     
     "ALARM" "BEEP, BEEP, BEEP"
     
@@ -485,10 +510,10 @@ label class2Day1:
 
 label class2Day1Cody:
 
-    "Oh hi Cody"
-    "Oh hi"
+    e "Oh hi Cody"
+    cody "Oh hi"
     nar "..."
-    "Finally, bye Cody!"
+    e "Finally, bye Cody!"
 
     jump walkDay1
     
@@ -496,19 +521,19 @@ label class2Day1Cody:
     
 label class2Day1Brooks:
 
-    "Oh hey there Ba- I mean Brooks"
+    e "Oh hey there Ba- I mean Brooks"
     
-    "Oh uh, hi! You sitting next to me?"
+    brooks "Oh uh, hi! You sitting next to me?"
     
-    "If that's ok with you~ of course!"
+    e "If that's ok with you~ of course!"
     
-    "Sure, go for it. Always a pleasure."
+    brooks "Sure, go for it. Always a pleasure."
     
-    "Awesome!"
+    e "Awesome!"
     
     #later
     "Class dismissed"
-    nar "Wait hey what? I was too busy staring at Brooks...oh well. Grades don't matter anyways"
+    nar "Wait hey what? I was too busy staring at Brooks...oh well. Grades don't matter anyways."
 
     jump walkDay1
     
@@ -516,17 +541,17 @@ label class2Day1Brooks:
     
 label class2Day1Trent:
 
-    "Hi Trent..."
+    e "Hi Trent..."
     
-    "Hi!"
+    trent "Hi!"
     
-    "So quick question before class, I've heard you are a racist. Is this true?"
+    e "So quick question before class, I've heard you are a racist. Is this true?"
     
-    "Oh class is starting. Sorry, I'm going to pay attention."
+    trent "Oh class is starting. Sorry, I'm going to pay attention."
     
     "Trent stares eagerly at the front, even though the teacher hasn't arrived yet."
     
-    "...right. I'll try again later."
+    e "...right. I'll try again later."
 
     jump walkDay1
     
@@ -556,25 +581,25 @@ label walkDay1:
 
     nar "Is that someone in a tree?"
     
-    "Hey! Are you ok?"
+    e "Hey! Are you ok?"
     
-    "Oh yeah. I'm just recharging my stamina up here"
+    caleb "Oh yeah. I'm just recharging my stamina up here."
     
-    nar "...huh?"
+    e "...huh?"
     nar "Am I about to be murdered?"
-    "Alright, well if you are fine then it's no problem"
+    e "Alright, well if you are fine then it's no problem."
     
-    "Oh, I'm fine. Mind if I join you? *hair flip*"
+    caleb "Oh, I'm fine. Mind if I join you? *hair flip*"
     
-    "...sure."
+    e "...sure."
     nar "I hear that it's best to appease the robbers and follow their commands"
     
-    "Alright, well turn away. Me getting down from this tree will be to scandalous for you ;)"
+    caleb "Alright, well turn away. Me getting down from this tree will be to scandalous for you ;)"
     
-    "...right"
-    nar "You turn around and immediately feel a tap on your shoulder"
+    e"...right"
+    nar "You turn around and immediately feel a tap on your shoulder. Strange."
     
-    "Alright, let's go."
+    caleb "Alright, let's go."
     
     show blackscreen with Dissolve(.5)
 
@@ -582,7 +607,7 @@ label walkDay1:
     
     show fountain with Dissolve(.5)
 
-    "Well, it was great walking with you, see you around!"
+    caleb "Well, it was great walking with you, see you around!"
     
     jump dinnerDay1
     
@@ -621,19 +646,19 @@ label dinnerDay1:
     
 label FKCDay1:
 
-    "Oh Mark, I LOVE FKC!"
+    e "Oh Mark, I LOVE FKC!"
     
-    "I know you do baby. After all, who doesn't love some fried chicken?"
+    mark "I know you do baby. After all, who doesn't love some fried chicken?"
     
     show fkc with Dissolve(.5)
 
-    "Let's eat!"
+    e "Let's eat!"
     
     nar "OM NOM NOM NOm NOM NOM NOM NOM NOM NOM!"
     
-    "Oh yeah! We have things to do tonight. Let's head back Mark."
+    e "Oh yeah! We have things to do tonight. Let's head back Mark."
     
-    "Oh yeah, let's blast outta here baby girl."
+    mark "Oh yeah, let's blast outta here baby girl."
 
     menu:
         "Watch the scary movie":
@@ -648,33 +673,33 @@ label dinnerDay1BCJ:
 
     show dcLine with Dissolve(.5)
 
-    "Wow, I wonder what they have today!"
+    e "Wow, I wonder what they have today!"
     
-    "Probably nothing good, it is the DC after all."
+    cody "Probably nothing good, it is the DC after all."
     
-    "Now Cody, the DC isn't THAT bad."
+    e "Now Cody, the DC isn't THAT bad."
     
-    "Yes it is."
+    brooks "Yes it is."
     
-    "Oh yeah, you're right Brooks...it is unbearable after all."
+    e "Oh yeah, you're right Brooks...it is unbearable after all."
     
     show dcTables with Dissolve(.5)
 
-    "...and that's why I agree with Kim Jong Un."
+    john "...and that's why I agree with Kim Jong Un."
     
-    "Haha! Nice!"
+    e "Haha! Nice!"
     
-    "Oh shoot, look at the time! We really have to go. You joining?"
+    brooks"Oh shoot, look at the time! We really have to go. We were gonna watch a scary movie. You joining?"
     
-    "Ehhhh..."
+    e "Ehhhh..."
 
     menu:
         "Watch the scary movie":
-            "Sure!"
+            e "Sure!"
             jump movieDay1
         
         "Go to bed":
-            "Nah, I'm tired. Thanks though"
+            e "Nah, I'm tired. Thanks though"
             jump sleepDay1Night
             
     return
@@ -704,23 +729,23 @@ label sleepDay1Dinner:
     
 label dream4:
 
-    "I'm elmo, and I'm not your friend!"
+    john "I'm elmo, and I'm not your friend!"
     
-    "Come here so I can gut you like a fish!"
+    john "Come here so I can gut you like a fish!"
     
-    "AHHHHH"
+    e "AHHHHH"
     
     "ALARM" "BEEP, BEEP, BEEP"
     
-    "WHAT THE FRICK WAS THAT!"
-    "THAT DREAM SUCKED!"
+    e "WHAT THE FRICK WAS THAT!"
+    e "THAT DREAM SUCKED!"
 
     menu:
         "Watch the scary movie":
             jump movieDay1
         
         "Go to bed":
-            "What ever, might as well sleep through the night then."
+            e "What ever, might as well sleep through the night then."
             jump sleepDay1Night
             
     return
@@ -729,11 +754,11 @@ label movieDay1:
 
     show beckerTheater with Dissolve(.5)
 
-    "It's kinda cold down here."
+    e "It's kinda cold down here."
 
-    "Do you want my blanket? I'm not using it."
+    brooks "Do you want my blanket? I'm not using it."
 
-    "Sure, thanks Brooks!"
+    e "Sure, thanks Brooks!"
 
     show blackscreen with Dissolve(.5)
 
@@ -745,8 +770,8 @@ label movieDay1:
 
     show beckerTheater with Dissolve(.5)
 
-    "EEEEEEK!"
-    "Oh gosh this movie is scary! It got me again...I need to relax and be safe"
+    e "EEEEEEK!"
+    e "Oh gosh this movie is scary! It got me again...I need to relax and be safe"
 
     menu:
         "Cling to Brooks":
@@ -799,21 +824,21 @@ label sleepDay1Night:
     
 label dream5:
 
-    "Ah, where am I? This doesn't look like a normal restaurant."
+    nar "Ah, where am I? This doesn't look like a normal restaurant."
     
-    "I'm just a salisbury steak looking to be eaten."
+    nar "I'm just a salisbury steak looking to be eaten."
     
-    "Wait...these ingredients. What do they have in common..."
+    nar "Wait...these ingredients. What do they have in common..."
     
-    "Barley, oats, quinoa...tofu, beans, peanuts...OH NO!"
+    nar "Barley, oats, quinoa...tofu, beans, peanuts...OH NO!"
     
-    "I'M IN A VEGAN RESTAURANT! I'LL NEVER GET EATEN!"
+    nar "I'M IN A VEGAN RESTAURANT! I'LL NEVER GET EATEN!"
 
-    "NOOOOOOOOOOOOOOOOOOOOOOOOOO!"
+    nar "NOOOOOOOOOOOOOOOOOOOOOOOOOO!"
     
     "ALARM" "BEEP BEEP BEEP"
     
-    "what."
+    e "what."
 
     jump breakfastDay2
     
@@ -840,15 +865,16 @@ label blanketReturn:
     show dormHallway with Dissolve(.5)
 
     nar "Knock knock"
-    "Brooks, you in there?"
+    e "Brooks, you in there?"
     nar "..."
     nar "He still hasn't answered..."
     
-    "Oh hey. What are you doing up here? You aren't supposed to be on our floor."
+    brooks "Oh hey. What are you doing up here? You aren't supposed to be on our floor."
     nar "No way. Brooks, fresh out of the shower, and shirtless! I can't believe this!"
-    "Oh yeah, I was just, you know, dropping your blanket off."
-    "Alright then. Thank you, now you better go before I have to fine you."
-    "Cya later"
+    #NEED SHIRTLESS BROOKS
+    e "Oh yeah, I was just, you know, dropping your blanket off."
+    brooks "Alright then. Thank you, now you better go before I have to fine you."
+    e "Cya later"
     nar "Oh my gosh I can't believe that just happened! Now I can think about that while I do all of my homework."
 
     jump homeworkDay2
@@ -876,9 +902,9 @@ label lunchDay2:
 
     show dcLine Dissolve(.5)
 
-    "Hey, isn't it a little ate to eat lunch?"
-    "No way, you guys are all here?"
-    "Yeah, lost track of time. We all have different things to do, but feel free to join whoever."
+    brooks "Hey, isn't it a little ate to eat lunch?"
+    e "No way, you guys are all here?"
+    cody "Yeah, lost track of time. We all have different things to do, but feel free to join whoever."
 
     menu:
         "Lunch with Brooks":
@@ -909,27 +935,27 @@ label lunchDay2:
     
 label lunchDay2Brooks:
 
-    "Hey Brooks."
+    e "Hey Brooks."
     
-    "Oh, hey there. You joining me for lunch?"
+    brooks "Oh, hey there. You joining me for lunch?"
     
-    "Yeah, if that's ok with you."
+    e "Yeah, if that's ok with you."
     
-    "Of course, that's no problem."
+    brooks "Of course, that's no problem."
     
-    "Great!"
+    e "Great!"
     
     show dcTables with Dissolve(.5)
 
     "..."
     
-    "...and THAT'S why all the Europeans...er...yeah"
+    brooks "...and THAT'S why all the Europeans...er...yeah"
     
-    "...ok"
+    e "...ok"
     
-    "I gotta go, cya later!"
+    brooks "I gotta go, cya later!"
     
-    "Alright, bye."
+    e "Alright, bye."
     
     nar "I'll go hang out with Mark now."
 
@@ -939,19 +965,19 @@ label lunchDay2Brooks:
     
 label lunchDay2Caleb:
 
-    "Hey Caleb, what's up?"
+    e "Hey Caleb, what's up?"
     
-    "Oh just getting some lunch."
+    caleb "Oh just getting some lunch."
     
-    "Mind if I join you?"
+    e "Mind if I join you?"
     
-    "Sure."
+    caleb "Sure."
     
-    "Man I can't believe we can't find a table!"
+    e "Man I can't believe we can't find a table!"
     
-    "That's fine, my head hurts anyways. I'm gonna go back to my dark, quiet cave."
+    caleb "That's fine, my head hurts anyways. I'm gonna go back to my dark, quiet, drippy cave."
     
-    "Well alright then."
+    e "Well alright then."
     
     show dcTables with Dissolve(.5)
 
@@ -963,23 +989,23 @@ label lunchDay2Caleb:
     
 label lunchDay2Cody:
 
-    "Hey Cody, Mr. CMC."
+    e "Hey Cody, Mr. CMC."
     
-    "Hi."
+    cody "Hi."
     
-    "Can I eat dinner with you?"
+    e "Can I eat dinner with you?"
     
-    "I mean it's lunch, but ok."
+    cody "I mean it's lunch, but ok."
 
     show dcTables with Dissolve(.5)
     
-    "...and that's why being a CMC is great."
+    cody "...and that's why being a CMC is great."
     
-    "Man, I don't know any other floor that paints for floor worship!"
+    e "Man, I don't know any other floor that paints for floor worship!"
     
-    "Alright, cya later. I gotta go."
+    cody "Alright, cya later. I gotta go."
     
-    "Cya!"
+    e "Cya!"
     
     jump afternoonDay2Brooks
     
@@ -991,13 +1017,13 @@ label lunchDay2Trent:
 
     "..."
     
-    "And THAT is why we aren't allowed to date our students."
+    trent "And THAT is why we aren't allowed to date our students."
     
-    "I mean yeah, I feel like that was common sense and really didn't need a scientific study?"
+    e "I mean yeah, I feel like that was common sense and really didn't need a scientific study?"
     
-    "Anyways, we are just talking."
+    trent "Anyways, we are just talking."
     
-    "Yeah, let's go."
+    e "Yeah, let's go."
     
     jump afternoonDay2Brooks
     
@@ -1009,13 +1035,13 @@ label FKCDay2Lunch:
 
     "..."
 
-    "I like your truck by the way, and I can't believe you listen to Rob Zombie!"
+    e "I like your truck by the way, and I can't believe you listen to Rob Zombie!"
     
-    "I love listening to him while I shuck 10 billion ears of corn!"
+    mark "I love listening to him while I shuck 10 billion ears of corn!"
     
-    "You really like your farming and FKC don't you..."
+    e "You really like your farming and FKC don't you..."
     
-    "Yeah, it's my life...well I have some homework so let's get back now."
+    mark "Yeah, it's my life...well I have some homework so let's get back now."
     
     nar "Alright, time to go back and hang out with Brooks."
     
@@ -1029,15 +1055,15 @@ label lunchDay2John:
 
     "..."
 
-    "I love your socks John!"
+    e "I love your socks John!"
     
-    "Thanks, I figured if I have to wear them I might as well pick some good ones."
+    john "Thanks, I figured if I have to wear them I might as well pick some good ones."
     
-    "Those are the best Narwhal socks I have EVER seen, trust me."
+    e "Those are the best Narwhal socks I have EVER seen, trust me."
     
-    "Thanks thanks, alright. I gotta go to the MCA now so I'll see you later!"
+    john "Thanks thanks, alright. I gotta go to the MCA now so I'll see you later!"
     
-    "Bye John!"
+    e "Bye John!"
     
     nar "Alright, time to go back and hang out with Brooks."
     
@@ -1047,27 +1073,27 @@ label lunchDay2John:
     
 label afternoonDay2Mark:
 
-    "Yo Mark, wanna go do something?"
+    e "Yo Mark, wanna go do something?"
     
-    "Sure! Let's go somewhere. Anywhere you had in mind?"
+    mark "Sure! Let's go somewhere. Anywhere you had in mind?"
     
-    "I was thinking we should go to FKC in Kentucky."
+    e "I was thinking we should go to FKC in Kentucky."
     
-    "Hey, sounds good to me. Meet me in my truck in five."
+    mark "Hey, sounds good to me. Meet me in my truck in five."
     
-    "Man, the mall is so much fun. I missed doing this because I don't have a vehicle on campus."
+    e "Man, the mall is so much fun. I missed doing this because I don't have a vehicle on campus."
     
-    "Yeah, too bad we couldn't make it to Kentucky. Sorry about not having gas and being broke."
+    mark "Yeah, too bad we couldn't make it to Kentucky. Sorry about not having gas and being broke."
     
-    "All good, this place is great and the FKC is fine here!"
+    e "All good, this place is great and the FKC is fine here!"
     
-    "I spent all my money on FKC, so that's why!"
+    mark "I spent all my money on FKC, so that's why!"
     
-    "Wow Mark, I'm gonna miss you when you graduate."
+    e "Wow Mark, I'm gonna miss you when you graduate."
     
-    "Yeah, alright. Let's get walking around the mall before we leave."
+    mark "Yeah, alright. Let's get walking around the mall before we leave."
     
-    "Yessir."
+    e "Yessir."
 
     jump dinnerDay2
     
@@ -1077,11 +1103,11 @@ label afternoonDay2Brooks:
 
     show dcOutside with Dissolve(.5)
 
-    "Hi Brooks! What do you wanna do?"
+    e "Hi Brooks! What do you wanna do?"
     
-    "Oh hey. I was thinking we could just chill in the lounge or somewhere quiet."
+    brooks "Oh hey. I was thinking we could just chill in the lounge or somewhere quiet."
     
-    "Yeah, lets do that."
+    e "Yeah, lets do that."
 
     show blackscreen with Dissolve(.5)
     
@@ -1089,15 +1115,15 @@ label afternoonDay2Brooks:
 
     show lounge with Dissolve(.5)
     
-    "So that's why you went to Wright 2 out of all the other choices."
+    e "So that's why you went to Wright 2 out of all the other choices."
     
-    "Yep, and I'm glad I did! It is simply the best floor...oh! Look at the time."
+    brooks "Yep, and I'm glad I did! It is simply the best floor...oh! Look at the time."
     
-    "Dinner already? Wow that time flew by."
+    e "Dinner already? Wow that time flew by."
     
-    "Yeah, let's go together."
+    brooks "Yeah, let's go together."
     
-    "Ok!"
+    e "Ok!"
 
     jump dinnerDay2
     
@@ -1107,27 +1133,26 @@ label dinnerDay2:
 
     show dcOutside with Dissolve(.5)
 
-    "Oh hey! You going to dinner?"
+    e "Oh hey! You going to dinner?"
     
-    "Yeah we were just go..."
+    caleb "Yeah we were just go..."
     
-    "Awesome! Wanna sit with us?"
+    trent "Wanna sit with us?"
 
     menu:
         "Dinner with Brooks, John and Cody":
-            "No, sorry, I already told these guys I would eat with them! Thanks though."
+            e "No, sorry, I already told these guys I would eat with them! Thanks though."
             jump dinnerDay2BJC
         
-        "Dinner with Caleb, Trent and Cole":
-            "Sorry guys, I'm gonna eat with Caleb, Trent and Cole."
+        "Dinner with Caleb and Trent":
+            e "Sure!"
             
-            "Oh...ok. See you later then..."
             jump dinnerDay2CTC
             
         "FKC with Mark":
-            "I'm actually gonna go find Mark and go with him!"
+            e "I'm actually gonna go find Mark and go with him!"
             
-            "Uhhhh...alrighty then..."
+            caleb "Uhhhh...alrighty then..."
             jump FKCDay2Dinner
             
     return
@@ -1140,27 +1165,27 @@ label dinnerDay2BJC:
     
     show dcTables with Dissolve(.5)
 
-    "Yeah, we have a trebs concert next week if you would like to join!"
+    brooks "Yeah, we have a trebs concert next week if you would like to join!"
     
-    "I think I'll pass on this one, thank you though."
+    e "I think I'll pass on this one, thank you though."
     
-    "What's the problem, you're only the wrong gender!"
+    cody "What's the problem, you're only the wrong gender!"
     
-    "Exaaactly."
+    e "Exaaactly."
     
-    "Alright, let's bust this DC joint and get outta here."
+    john "Alright, let's bust this DC joint and get outta here."
 
     menu:
         "Evening stroll with Brooks":
-            "Hey Brooks, wanna go on a walk?"
+            e "Hey Brooks, wanna go on a walk?"
             jump walkDay2
             
         "Evening stroll with John":
-            "Hey John, wanna go on a walk?"
+            e "Hey John, wanna go on a walk?"
             jump walkDay2
             
         "Evening stroll with Cody":
-            "Hey Cody, wanna go on a walk?"
+            e "Hey Cody, wanna go on a walk?"
             jump walkDay2
             
     return
@@ -1173,30 +1198,30 @@ label dinnerDay2CTC:
 
     show dcTables with Dissolve(.5)
     
-    "Yeah, we have a Smash Bros. Tournament next week if you would like to join!"
+    caleb "Yeah, we have a Smash Bros. Tournament next week if you would like to join!"
     
-    "I might come watch, but I don't play. Besides, melee is more interesting to watch so I'd probably play that if anything."
+    e "I might come watch, but I don't play. Besides, melee is more interesting to watch so I'd probably play that if anything."
     
-    "Alright cool...hey."
+    trent "Alright cool...hey."
     
-    "W-what?? *Blushes*"
+    e "W-what?? *Blushes*"
     
-    "We're just talking."
+    trent "We're just talking."
 
     menu:
         "Evening stroll with Trent":
             $ walker = "Trent"
-            "Hey Trent, wanna go on a walk?"
+            e "Hey Trent, wanna go on a walk?"
             jump walkDay2
             
         "Evening stroll with Caleb":
             $ walker = "Caleb"
-            "Hey Caleb, wanna go on a walk?"
+            e "Hey Caleb, wanna go on a walk?"
             jump walkDay2
             
         "Evening stroll with Cole":
             $ walker = "Cole"
-            "Hey Cole, wanna go on a walk?"
+            e "Hey Cole, wanna go on a walk?"
             jump walkDay2
             
     return
@@ -1207,13 +1232,13 @@ label FKCDay2Dinner:
 
     "MUNCH MUNCH"
     
-    "I LOVE FKC"
+    mark "I LOVE FKC"
     
-    "MMMMMM"
+    e "MMMMMM"
     
-    "Hey Mark, let's go on a walk together."
+    e "Hey Mark, let's go on a walk together."
     
-    "OK"
+    mark "OK"
     
     $ walker = "Mark"
 
@@ -1237,11 +1262,11 @@ label smashBros:
 
     show lounge with Dissolve(.5)
 
-    "Alright, practicing in some big free for alls! The best way to warm up."
+    caleb "Alright, practicing in some big free for alls! The best way to warm up."
     
-    "We have to put items and final smash on for the tournament practice."
+    trent "We have to put items and final smash on for the tournament practice."
     
-    "Looks good to me, pick jungle japes and lets get playing."
+    john "Looks good to me, pick jungle japes and lets get playing."
     
     "..."
     
@@ -1249,17 +1274,17 @@ label smashBros:
     
     "..."
     
-    "Yeah, I won the most!"
+    john "Yeah, I won the most!"
     
-    "Great job!"
+    trent "Great job!"
     
-    "Good games!"
+    caleb "Good games!"
     
-    "I think we are ready, let's head to bed."
+    john "I think we are ready, let's head to bed."
     
-    "Night everyone."
+    trent "Night everyone."
     
-    "Night."
+    e "Night."
 
     jump sleepDay2Night
     
@@ -1269,11 +1294,11 @@ label sleepDay2Night:
 
     show dormDorm with Dissolve(.5)
 
-    "Oh, Church is tomorrow...I wonder who I should ask to go with me"
+    nar "Oh, Church is tomorrow...I wonder who I should ask to go with me"
     
-    "I'll decide tomorrow who to ask to Church with."
+    nar "I'll decide tomorrow who to ask to Church with."
 
-    "Sigh, I'm so tired. Off to bed I go."
+    nar "Sigh, I'm so tired. Off to bed I go."
 
     jump dream6
     
@@ -1281,15 +1306,15 @@ label sleepDay2Night:
     
 label dream6:
 
-    "Who should I go with to Church tomorrow..."
+    nar "Who should I go with to Church tomorrow..."
     
-    "I mean, it has to be someone I like, it's basically asking them out."
+    nar "I mean, it has to be someone I like, it's basically asking them out."
     
-    "Everything I've done comes down to this."
+    nar "Everything I've done comes down to this."
     
-    "This is so important."
+    nar "This is so important."
 
-    "I can't wait."
+    nar "I can't wait."
     
     "ALARM" "BEEP BEEP BEEP"
     
@@ -1303,47 +1328,47 @@ label dream6:
     
 label finalScene:
 
-    "Hey guys."
+    e "Hey guys."
     
-    "Hey, who were you thinking of going to Church with?"
+    brooks "Hey, who were you thinking of going to Church with?"
     
-    "Uhhh, good question. This is very important, so give me a second to think..."
+    e "Uhhh, good question. This is very important, so give me a second to think..."
 
     menu:
         "Church with Brooks":
-            "Brooks, I choose you!"
+            e "Brooks, I choose you!"
             
-            "Alright, let's go together then!"
+            brooks "Alright, let's go together then!"
             jump church
             
         "Church with Cody":
-            "Cody, let's go together."
+            e "Cody, let's go together."
             
-            "Ok."
+            cody "Ok."
             jump church
             
         "Church with John":
-            "John, John, let's get going!"
+            e "John, John, let's get going!"
             
-            "Alright!"
+            john "Alright!"
             jump church
             
         "Church with Mark":
-            "Mark, let's go and get some chicken afterwards!"
+            e "Mark, let's go and get some chicken afterwards!"
             
-            "Sounds like a plan to me!"
+            mark "Sounds like a plan to me!"
             jump church
             
         "Church with Caleb":
-            "Caleb, let's go."
+            e "Caleb, let's go."
             
-            "Heck yeah!"
+            caleb "Heck yeah!"
             jump church
             
         "Church with Trent":
-            "Pineapple sauce!"
+            e "Pineapple sauce!"
             
-            "And pancakes!"
+            trent "And pancakes!"
             jump church
             
     return
