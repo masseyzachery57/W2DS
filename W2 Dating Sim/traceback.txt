@@ -1,30 +1,77 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 155, in script
-    show cody sad at lefft
-  File "game/script.rpy", line 155, in <module>
-    show cody sad at lefft
-NameError: name 'lefft' is not defined
+While loading <'Image' u'/images/guys/done/brookssmile.png'>:
+  File "game/script.rpy", line 157, in script
+    brooks "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time."
+IOError: Couldn't find file 'images/guys/done/brookssmile.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 155, in script
-    show cody sad at lefft
-  File "D:\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\renpy-7.3.5-sdk\renpy\ast.py", line 1142, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "D:\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 155, in <module>
-    show cody sad at lefft
-NameError: name 'lefft' is not defined
+  File "game/script.rpy", line 157, in script
+    brooks "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time."
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
+    rv = render(root, width, height, st, st)
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 500, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 306, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 583, in render
+    return cache.get(self, render=True)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 628, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "Z:\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'images/guys/done/brookssmile.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 W2 Dating Sim 1.0
-Thu Apr 29 22:23:28 2021
+Mon May 03 16:24:41 2021

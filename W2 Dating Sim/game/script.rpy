@@ -151,7 +151,10 @@ label breakfastDay1:
 
     e "Oh hi Brooks! Didn't think you would be up this early...I know I almost wasn't!"
     
-    brooks "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time"
+    hide brooks neutral
+    show brooks smile at top
+    
+    brooks "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time."
     
     show cody sad at left
 
@@ -159,9 +162,13 @@ label breakfastDay1:
 
     menu:
         "Breakfast with Brooks":
+            hide brooks smile
+            hide cody sad
             jump breakfastDay1Brooks
             
         "Breakfast with Cody":
+            hide brooks smile
+            hide cody sad
             jump breakfastDay1Cody
             
     return
@@ -172,22 +179,41 @@ label breakfastDay1Brooks:
     
     show dcTables with Dissolve(.5)
     hide dcOutside
+    show brooks smile at top
+    
     #you
     e "An RA this semester? No way! That is sooooo hot!"
     
     nar "Am I drooling? I certainly hope not!"
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Yeah, I'm enjoying it. By the way, here's a napkin to help you with that..."
+    
+    hide brooks talking
+    show brooks smile at top
     
     nar "EEK! He noticed. I gotta change the subject."
     
     e "Uhh...thanks! Alright, I gotta head to class."
     
+    hide brooks smile
+    show brooks surprised at top
+    
     brooks "No way, I do too! You going to Sociology?"
+    
+    hide brooks surprised
+    show brooks smile at top
     
     e "Yeah, are you in that class?"
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Yes ma'am! I'll see you there!"
+    
+    hide brooks talking
     
     nar "Oh my gosh, that was so fun. I can't wait to talk to him later!"
 
@@ -196,22 +222,35 @@ label breakfastDay1Brooks:
     return
     
 label breakfastDay1Cody:
+
+    #you
+    e "I would love to eat with you!"
     
     #In DC
     
     show dcTables with Dissolve(.5)
     hide dcOutside
-    #you
-    e "I would love to eat with you!"
+    show cody talking at top
     
     #Cody etc
     cody "...and THAT is why you should never walk with Yu-Gi-Oh cards in your left pocket!"
     
+    hide cody talking
+    show cody neutral at top
+    
     e "Wow, that is SOOOO funny. You are hilarious Cody!"
+    
+    hide cody neutral
+    show cody talking at top
     
     cody "Why thank you!"
     
+    hide cody talking
+    show cody smile at top
+    
     e "Alright, I gotta head to class. See you later."
+    
+    hide cody smile
 
     jump class1Day1
     
@@ -237,15 +276,23 @@ label dream1:
     #e "Me"
     
     
-    
+    show brooks neutral at top
     
     e "Oh hey Brooks, what are you doing here?"
     
+    hide brooks neutral
+    show brooks talking at top
+    
     brooks "You know, the usual. I'm glad you're here though, I have a question for you."
+    
+    hide brooks talking
+    show brooks flirt at top
     
     e "Oh...What is it?"
     
     nar "Could he really be asking me out???"
+    
+    hide brooks flirt
     
     "ALARM" "BEEP, BEEP, BEEP"
     
@@ -267,18 +314,27 @@ label class1Day1:
     nar "Oh, I know a bunch of people in this class!"
     nar "Let's see...I can sit with Brooks or I could go sit with John. I haven't seen him yet."
     
+    show brooks talking at top
+    show john neutral at right
+    
     brooks "Oh hey! We saved a seat for you between us if you wanted to sit here"
     
     nar "Oh, I could sit next to both!"
 
     menu:
         "Sit with John":
+            hide brooks talking
+            hide john neutral
             jump class1Day1John
             
         "Sit with Brooks":
+            hide brooks talking
+            hide john neutral
             jump class1Day1Brooks
             
         "Sit with both":
+            hide brooks talking
+            hide john neutral
             jump class1Day1Both
 
     return
@@ -291,13 +347,20 @@ label sleepDay1Class1:
     
 label dream2:
 
+    show brooks embarrassed at top
+
     brooks "Yeah, so my question is, would you like to eat lunch with me right now?"
     
     nar "OH MY WORD"
     
     e "Like a date? Are you asking me out?"
     
+    hide brooks embarrassed
+    show brooks talking at top
+    
     brooks "Uh, you know what. S-"
+    
+    hide brooks talking
     
     "ALARM" "BEEP, BEEP, BEEP"
     
@@ -314,20 +377,35 @@ label dream2:
     
 label class1Day1John:
 
+    show john neutral at top
+
     e "Hey John! How are you today?"
     
+    hide john neutral
+    show john talking at top
+    
     john "SHHHH! Class is starting, and I gotta practice my humming during it. Francoise has my notes covered."
+    
+    hide john talking
+    show john smile at top
     
     nar "Well that was weird"
     
     john "*procedes to hum the whole class period"
+    
+    hide john smile
     
     nar "..."
     
     #stretching, you say
     e "Finally class is over!"
     
+    show john flirt at top
+    
     john "Yeah. I'm gonna head to lunch now. Would you like to join me?"
+    
+    hide john flirt
+    show john smile
     
     e "Uhhhh well it is lunch time"
     
@@ -335,28 +413,49 @@ label class1Day1John:
 
     menu:
         "Lunch with John":
+            hide john smile
+            show john surprised at top
             e "Sure!"
+            hide john surprised
             jump lunchDay1John
             
         "Lunch alone":
+            hide john smile
+            show john sad at top
             e "No thanks. I uh, have plans. Sorry..."
+            hide john sad
             jump lunchDay1Alone
     
     return
     
 label class1Day1Brooks:
 
-    #IF YOU SAT BY BROOKS AT BREAKFAST SAY HI AGAIN or else say something else here?
+    #IF YOU SAT BY BROOKS AT BREAKFAST SAY HI AGAIN or else say something else here? nah not worth it rn
+    
+    show brooks neutral at top
     
     e "Well hello again Brooks."
     
+    hide brooks neutral
+    show brooks talking at top
+    
     brooks "Hey!"
+    
+    hide brooks talking
+    show brooks smile at top
     
     e "Glad I could sit next to you today!"
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Anytime, looks like class is starting now."
     
+    hide brooks talking
+    
     "..."
+    
+    show mark neutral at left
     
     e "Finally out! Oh hey, is that MARK?"
 
@@ -364,34 +463,63 @@ label class1Day1Brooks:
         "Lunch with Mark":
             e "Hey Mark, let's go to lunch!"
             
+            hide mark neutral
+            show mark talking at left
+            
             mark "Oh yeah sure! I'm going to FKC, meet me outside in five in my truck"
+            
+            hide mark talking
             jump lunchDay1Mark
             
         "Lunch alone":
+            hide mark neutral
             jump lunchDay1Alone
 
     return
     
 label class1Day1Both:
 
+    show brooks neutral at top
+    show john neutral at right
+
     e "Hey guys!"
+    
+    hide brooks neutral
+    show brooks talking at top
     
     brooks "Hi!"
     
+    hide john neutral
+    show john talking at right
+    
     john "Sup!"
+    
+    hide brooks talking
+    hide john talking
     
     #class starts and stuff
     
     nar "...class is boring today"
     
+    show brooks neutral at top
+    show john neutral at right
+    
     e "Alright, see you guys later!"
     
+    hide john neutral
+    show john talking at right
+    
     john "Yeah see you too."
+    
+    hide brooks neutral
+    show brooks talking at top
     
     brooks "See ya!"
 
     menu:
         "Lunch alone":
+            hide brooks talking
+            hide john talking
             nar "Time for lunch!"
             jump lunchDay1Alone
 
@@ -413,25 +541,51 @@ label lunchDay1Mark:
 
     show fkc with Dissolve(.5)
     
+    show mark smile at top
+    
     e "Yo what are you gonna get?"
+    
+    hide mark smile
+    show mark talking at top
     
     mark "FKC?"
     
+    hide mark talking
+    show mark neutral at top
+    
     e "Yeah what from FKC?"
+    
+    hide mark neutral
+    show mark surprised at top
     
     mark "I love FKC I'm getting FKC"
     
+    
     e "...right"
     
-    nar "FKC is good"
+    hide mark surprised
+    show mark embarrassed at top
+    
+    e "FKC is good I suppose"
     
     #add more probably? Not sure where to go with this
     
+    hide mark embarrassed
+    show mark flirt at top
+    
     mark "*wink*"
+    
+    hide mark flirt
+    show mark smile at top
     
     e "Oh, we gotta get it to go by the way. I have class."
     
+    hide mark smile
+    show mark talking at top
+    
     mark "Alright lets head back."
+    
+    hide mark talking
 
     jump class2Day1
     
