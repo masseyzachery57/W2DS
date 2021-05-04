@@ -594,20 +594,36 @@ label lunchDay1Mark:
 label lunchDay1John:
 
     show dcLine with Dissolve(.5)
+    show john smile at top
 
     e "Hey John, so how have you been?"
     
+    hide john smile
+    show john talking at top
+    
     john "I've been fabulous! How are you?"
     
+    hide john talking
+    show john smile at top
+    
     e "I'm good...thanks for asking!"
+    
+    hide john smile
     
     show dcTables with Dissolve(.5)
 
     #Johns story
+    show john talking at top
+    
     john "...and that's why you should never sleep with a rainbow narwhal!"
+    
+    hide john talking
+    show john smile at top
     
     e "Well...right. I have class. See you later..."
     nar "Talk about disturbing..."
+    
+    hide john smile
 
     jump class2Day1
     
@@ -620,12 +636,19 @@ label sleepDay1Lunch:
     return
     
 label dream3:
+
+    show brooks embarrassed at top
         
     brooks "You know what, Sure! Let's call this a date."
     
     e "Oh my, of course I will, I've been waiting for so long!"
     
+    hide brooks embarrassed
+    show brooks flirt at top
+    
     brooks "In fact, let me get down on my knee..."
+    
+    hide brooks flirt
     
     "ALARM" "BEEP, BEEP, BEEP"
     
@@ -649,25 +672,55 @@ label class2Day1:
     show shClass with Dissolve(.5)
     
     nar "let's see...is anyone I know here?"
+    
+    show brooks neutral at right
+    show cody neutral at left
+    show trent neutral at top
+    
     nar "Oh! There's Cody over there, and Brooks on the other side. And of course, Trent in the middle up front."
     menu:
         "Sit with Cody":
+            hide brooks neutral
+            hide cody neutral
+            hide trent neutral
             jump class2Day1Cody
         
         "Sit with Brooks":
+            hide brooks neutral
+            hide cody neutral
+            hide trent neutral
             jump class2Day1Brooks
             
         "Sit with Trent":
+            hide brooks neutral
+            hide cody neutral
+            hide trent neutral
             jump class2Day1Trent
             
     return
 
 label class2Day1Cody:
 
+    show cody neutral at top
+
     e "Oh hi Cody"
+    
+    hide cody neutral
+    show cody talking at top
+    
     cody "Oh hi"
+    
+    hide cody talking
+    
     nar "..."
+    "blah blah blah"
+    "..."
+    
+    show cody neutral at top
+    
     e "Finally, bye Cody!"
+    
+    hide cody neutral
 
     jump walkDay1
     
@@ -675,19 +728,40 @@ label class2Day1Cody:
     
 label class2Day1Brooks:
 
+    show brooks neutral at top
+
     e "Oh hey there Ba- I mean Brooks"
+    
+    hide brooks neutral
+    show brooks surprised at top
     
     brooks "Oh uh, hi! You sitting next to me?"
     
+    hide brooks surprised
+    show brooks smile at top
+    
     e "If that's ok with you~ of course!"
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Sure, go for it. Always a pleasure."
+    
+    hide brooks talking
+    show brooks neutral at top
     
     e "Awesome!"
     
     #later
+    "..."
+    "..."
+    "..."
+    "..."
+    "..."
     "Class dismissed"
     nar "Wait hey what? I was too busy staring at Brooks...oh well. Grades don't matter anyways."
+    
+    hide brooks neutral
 
     jump walkDay1
     
@@ -695,13 +769,26 @@ label class2Day1Brooks:
     
 label class2Day1Trent:
 
+    show trent neutral at top
+
     e "Hi Trent..."
+    
+    hide trent neutral
+    show trent talking at top
     
     trent "Hi!"
     
+    hide trent talking
+    show trent smile at top
+    
     e "So quick question before class, I've heard you are a racist. Is this true?"
     
+    hide trent smile
+    show trent sad at top
+    
     trent "Oh class is starting. Sorry, I'm going to pay attention."
+    
+    hide trent sad
     
     "Trent stares eagerly at the front, even though the teacher hasn't arrived yet."
     
@@ -713,7 +800,7 @@ label class2Day1Trent:
     
 label sleepDay1Class2:
 
-    nar "Ah, no dreams, that sucks. Come on and show me the end."
+    nar "Ah, no dreams, that sucks. Come on and show me the end of BROOKS AND I."
 
     menu:
         "I should take a walk through the woods":
@@ -737,23 +824,40 @@ label walkDay1:
     
     e "Hey! Are you ok?"
     
+    show caleb smile at top
+    
     caleb "Oh yeah. I'm just recharging my stamina up here."
     
     e "...huh?"
     nar "Am I about to be murdered?"
     e "Alright, well if you are fine then it's no problem."
     
+    hide caleb smile
+    show caleb flirt at top
+    
     caleb "Oh, I'm fine. Mind if I join you? *hair flip*"
     
     e "...sure."
     nar "I hear that it's best to appease the robbers and follow their commands"
     
+    hide caleb flirt
+    
     caleb "Alright, well turn away. Me getting down from this tree will be to scandalous for you ;)"
     
+    hide caleb flirt
+    show caleb smile at top
+    
     e"...right"
+    
+    hide caleb smile
+    
     nar "You turn around and immediately feel a tap on your shoulder. Strange."
     
+    show caleb neutral at top
+    
     caleb "Alright, let's go."
+    
+    hide caleb neutral
     
     show blackscreen with Dissolve(.5)
 
@@ -761,7 +865,11 @@ label walkDay1:
     
     show fountain with Dissolve(.5)
 
+    show caleb talking at top
+
     caleb "Well, it was great walking with you, see you around!"
+    
+    hide caleb
     
     jump dinnerDay1
     
@@ -800,11 +908,20 @@ label dinnerDay1:
     
 label FKCDay1:
 
+    show mark neutral at top
+
     e "Oh Mark, I LOVE FKC!"
+    
+    hide mark neutral
+    show mark flirt at top
     
     mark "I know you do baby. After all, who doesn't love some fried chicken?"
     
+    hide mark flirt
+    
     show fkc with Dissolve(.5)
+    
+    show mark smile at top
 
     e "Let's eat!"
     
@@ -812,10 +929,17 @@ label FKCDay1:
     
     e "Oh yeah! We have things to do tonight. Let's head back Mark."
     
+    hide mark smile
+    show mark flirt at top
+    
     mark "Oh yeah, let's blast outta here baby girl."
+    
+    hide mark flirt
+    
+    nar "What to do..."
 
     menu:
-        "Watch the scary movie":
+        "Watch a scary movie":
             jump movieDay1
         
         "Go to bed":
@@ -826,34 +950,63 @@ label FKCDay1:
 label dinnerDay1BCJ:
 
     show dcLine with Dissolve(.5)
+    
+    show cody neutral at left
+    show brooks neutral at right
 
     e "Wow, I wonder what they have today!"
     
+    hide cody neutral
+    show cody talking at left
+    
     cody "Probably nothing good, it is the DC after all."
+    
+    hide cody talking
+    show cody neutral at left
     
     e "Now Cody, the DC isn't THAT bad."
     
+    hide brooks neutral
+    show brooks talking at right
+    
     brooks "Yes it is."
+    
+    hide brooks talking
+    show brooks neutral at right
     
     e "Oh yeah, you're right Brooks...it is unbearable after all."
     
     show dcTables with Dissolve(.5)
+    
+    show john talking at top
 
     john "...and that's why I agree with Kim Jong Un."
     
+    hide john talking
+    show john smile at top
+    hide brooks neutral
+    hide cody neutral
+    show brooks smile at right
+    show cody smile at left
+    
     e "Haha! Nice!"
     
-    brooks"Oh shoot, look at the time! We really have to go. We were gonna watch a scary movie. You joining?"
+    hide brooks smile
+    show brooks talking at right
+    
+    brooks "Oh shoot, look at the time! We really have to go. We were gonna watch a scary movie. You joining?"
     
     e "Ehhhh..."
 
     menu:
         "Watch the scary movie":
             e "Sure!"
+            hide brooks talking
             jump movieDay1
         
         "Go to bed":
             e "Nah, I'm tired. Thanks though"
+            hide brooks talking
             jump sleepDay1Night
             
     return
@@ -861,13 +1014,19 @@ label dinnerDay1BCJ:
 label dinnerDay1CT:
 
     show dcTables with Dissolve(.5)
+    
+    show caleb neutral at left
+    show trent neutral at right
 
     "They say nothing, but gnaw on their food and stare at you."
+    
+    hide trent neutral
+    hide caleb neutral
     
     "You promptly leave."
 
     menu:
-        "Watch the scary movie":
+        "Watch a scary movie":
             jump movieDay1
         
         "Go to bed":
@@ -883,11 +1042,18 @@ label sleepDay1Dinner:
     
 label dream4:
 
+    show john smile at top
+
     john "I'm elmo, and I'm not your friend!"
+    
+    hide john smile
+    show john surprised at top
     
     john "Come here so I can gut you like a fish!"
     
     e "AHHHHH"
+    
+    hide john surprised
     
     "ALARM" "BEEP, BEEP, BEEP"
     
@@ -895,7 +1061,7 @@ label dream4:
     e "THAT DREAM SUCKED!"
 
     menu:
-        "Watch the scary movie":
+        "Watch a scary movie":
             jump movieDay1
         
         "Go to bed":
@@ -909,10 +1075,14 @@ label movieDay1:
     show beckerTheater with Dissolve(.5)
 
     e "It's kinda cold down here."
+    
+    show brooks talking at right
 
     brooks "Do you want my blanket? I'm not using it."
 
     e "Sure, thanks Brooks!"
+    
+    hide brooks talking
 
     show blackscreen with Dissolve(.5)
 
@@ -930,32 +1100,44 @@ label movieDay1:
     menu:
         "Cling to Brooks":
             $ clingee = "Brooks"
+            show brooks smile at right
             nar "You cling to Brooks, and he seems happy. You enjoy the rest of the movie together."
+            hide brooks smile
             jump movieDay1Cling
         
         "Cling to Caleb":
             $ clingee = "Caleb"
+            show caleb smile at right
             nar "You cling to Caleb, and he seems happy. You enjoy the rest of the movie together."
+            hide caleb smile
             jump movieDay1Cling
             
         "Cling to Cody":
             $ clingee = "Cody"
+            show cody smile at right
             nar "You cling to Cody, and he seems happy. You enjoy the rest of the movie together."
+            hide cody smile
             jump movieDay1Cling
             
         "Cling to Trent":
             $ clingee = "Trent"
+            show trent smile at right
             nar "You cling to Trent, and he seems happy. You enjoy the rest of the movie together."
+            hide trent smile
             jump movieDay1Cling
             
         "Cling to Mark":
             $ clingee = "Mark"
+            show mark smile at right
             nar "You cling to Mark, and he seems happy. You enjoy the rest of the movie together."
+            hide mark smile
             jump movieDay1Cling
             
         "Cling to John":
             $ clingee = "John"
+            show john smile at right
             nar "You cling to John, and he seems happy. You enjoy the rest of the movie together."
+            hide john smile
             jump movieDay1Cling
         
     return
@@ -980,7 +1162,7 @@ label dream5:
 
     nar "Ah, where am I? This doesn't look like a normal restaurant."
     
-    nar "I'm just a salisbury steak looking to be eaten."
+    nar "Oh yeah...I'm just a salisbury steak looking to be eaten."
     
     nar "Wait...these ingredients. What do they have in common..."
     
@@ -1023,12 +1205,17 @@ label blanketReturn:
     nar "..."
     nar "He still hasn't answered..."
     
+    show brooks shirtless at left
+    
     brooks "Oh hey. What are you doing up here? You aren't supposed to be on our floor."
     nar "No way. Brooks, fresh out of the shower, and shirtless! I can't believe this!"
     #NEED SHIRTLESS BROOKS
     e "Oh yeah, I was just, you know, dropping your blanket off."
     brooks "Alright then. Thank you, now you better go before I have to fine you."
     e "Cya later"
+    
+    hide brooks shirtless
+    
     nar "Oh my gosh I can't believe that just happened! Now I can think about that while I do all of my homework."
 
     jump homeworkDay2
@@ -1038,9 +1225,12 @@ label blanketReturn:
 label homeworkDay2:
 
     show dormDorm with Dissolve(.5)
+    
     nar "hmmm...the square root of twenty five x squared boils down to..."
+    show brooks smile at top
     nar "Brooks!"
     nar "Wait no, I can't get distracted, its five x."
+    hide brooks smile
     nar "..."
     nar "Ok, finally done! Oh, I guess I'm eating a late lunch today. That took longer than it should have because I kept thinking of Brooks..."
 
@@ -1055,34 +1245,60 @@ label lunchDay2:
     nar "I doubt anyone will be here to eat with me this late."
 
     show dcLine Dissolve(.5)
+    
+    show brooks talking at right
 
     brooks "Hey, isn't it a little ate to eat lunch?"
+    
+    hide brooks talking
+    show brooks smile at right
+    show cody smile at left
+    
     e "No way, you guys are all here?"
+    
+    hide cody smile
+    show cody talking at left
+    
     cody "Yeah, lost track of time. We all have different things to do, but feel free to join whoever."
+    
+    hide cody talking
+    hide brooks smile
 
     menu:
         "Lunch with Brooks":
+            show cody sad at left
             "I'll go with Brooks!"
+            hide cody sad
             jump lunchDay2Brooks
         
         "Lunch with Caleb":
+            show cody sad at left
             "I'll go with Caleb!"
+            hide cody sad
             jump lunchDay2Caleb
         
         "Lunch with Cody":
+            show cody surprised at left
             "I'll go with Cody!"
+            hide cody surprised
             jump lunchDay2Cody
         
         "Lunch with Trent":
+            show cody sad at left
             "I'll go with Trent!"
+            hide cody sad
             jump lunchDay2Trent
         
         "FKC with Mark":
+            show cody sad at left
             "I'll go with Mark!"
+            hide cody sad
             jump FKCDay2Lunch
         
         "Lunch with John":
+            show cody sad at left
             "I'll go with John!"
+            hide cody sad
             jump lunchDay2John
             
     return
@@ -1091,23 +1307,46 @@ label lunchDay2Brooks:
 
     e "Hey Brooks."
     
+    show brooks talking at top
+    
     brooks "Oh, hey there. You joining me for lunch?"
+    
+    hide brooks talking
+    show brooks smile at top
     
     e "Yeah, if that's ok with you."
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Of course, that's no problem."
+    
+    hide brooks talking
+    show brooks smile at top
     
     e "Great!"
     
     show dcTables with Dissolve(.5)
+    
+    hide brooks smile
+    show brooks talking at top
 
     "..."
     
     brooks "...and THAT'S why all the Europeans...er...yeah"
     
+    hide brooks talking
+    show brooks smile at top
+    
     e "...ok"
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "I gotta go, cya later!"
+    
+    hide brooks talking
+    show brooks smile at top
     
     e "Alright, bye."
     
@@ -1119,19 +1358,35 @@ label lunchDay2Brooks:
     
 label lunchDay2Caleb:
 
+    show caleb neutral at top
+
     e "Hey Caleb, what's up?"
     
-    caleb "Oh just getting some lunch."
+    hide caleb neutral
+    show caleb talking at top
+    
+    caleb "Oh, just getting some lunch."
+    
+    hide caleb talking
+    show caleb neutral at top
     
     e "Mind if I join you?"
     
-    caleb "Sure."
+    hide caleb neutral
+    show caleb embarrassed at top
+    
+    caleb "Sure..."
     
     e "Man I can't believe we can't find a table!"
+    
+    hide caleb embarrassed
+    show caleb sad at top
     
     caleb "That's fine, my head hurts anyways. I'm gonna go back to my dark, quiet, drippy cave."
     
     e "Well alright then."
+    
+    hide caleb sad
     
     show dcTables with Dissolve(.5)
 
@@ -1143,21 +1398,37 @@ label lunchDay2Caleb:
     
 label lunchDay2Cody:
 
+    show cody flirt at top
+
     e "Hey Cody, Mr. CMC."
     
     cody "Hi."
     
     e "Can I eat dinner with you?"
     
+    hide cody flirt
+    show cody embarrassed at top
+    
     cody "I mean it's lunch, but ok."
 
     show dcTables with Dissolve(.5)
     
+    hide cody embarrassed
+    show cody talking at top
+    
     cody "...and that's why being a CMC is great."
+    
+    hide cody talking
+    show cody smile at top
     
     e "Man, I don't know any other floor that paints for floor worship!"
     
+    hide cody smile
+    show cody talking at top
+    
     cody "Alright, cya later. I gotta go."
+    
+    hide cody talking
     
     e "Cya!"
     
@@ -1168,16 +1439,29 @@ label lunchDay2Cody:
 label lunchDay2Trent:
 
     show dcTables with Dissolve(.5)
+    
+    show trent talking at top
 
     "..."
+    
+    hide trent talking
+    show trent sad at top
     
     trent "And THAT is why we aren't allowed to date our students."
     
     e "I mean yeah, I feel like that was common sense and really didn't need a scientific study?"
     
+    hide trent sad
+    show trent talking at top
+    
     trent "Anyways, we are just talking."
     
+    hide trent talking
+    show trent neutral at top
+    
     e "Yeah, let's go."
+    
+    hide trent neutral
     
     jump afternoonDay2Brooks
     
@@ -1188,16 +1472,31 @@ label FKCDay2Lunch:
     show fkc with Dissolve(.5)
 
     "..."
+    
+    show mark neutral at top
 
     e "I like your truck by the way, and I can't believe you listen to Rob Zombie!"
     
+    hide mark neutral
+    show mark surprised at top
+    
     mark "I love listening to him while I shuck 10 billion ears of corn!"
+    
+    hide mark surprised
+    show mark smile at top
     
     e "You really like your farming and FKC don't you..."
     
-    mark "Yeah, it's my life...well I have some homework so let's get back now."
+    mark "Yeah, it's my life..."
+    
+    hide mark smile
+    show mark sad at top
+    
+    mark "Well I have some homework so let's get back now."
     
     nar "Alright, time to go back and hang out with Brooks."
+    
+    hide mark sad
     
     jump afternoonDay2Brooks
     
@@ -1208,14 +1507,27 @@ label lunchDay2John:
     show dcTables with Dissolve(.5)
 
     "..."
+    
+    show john neutral at top
 
     e "I love your socks John!"
     
+    hide john neutral
+    show john talking at top
+    
     john "Thanks, I figured if I have to wear them I might as well pick some good ones."
+    
+    hide john talking
+    show john smile at top
     
     e "Those are the best Narwhal socks I have EVER seen, trust me."
     
+    hide john smile
+    show john talking
+    
     john "Thanks thanks, alright. I gotta go to the MCA now so I'll see you later!"
+    
+    hide john talking
     
     e "Bye John!"
     
@@ -1227,27 +1539,61 @@ label lunchDay2John:
     
 label afternoonDay2Mark:
 
+    show mark neutral at top
+
     e "Yo Mark, wanna go do something?"
+    
+    hide mark neutral
+    show mark talking at top
     
     mark "Sure! Let's go somewhere. Anywhere you had in mind?"
     
+    hide mark talking
+    show mark smile at top
+    
     e "I was thinking we should go to FKC in Kentucky."
+    
+    hide mark neutral
+    show mark talking at top
     
     mark "Hey, sounds good to me. Meet me in my truck in five."
     
+    hide mark talking
+    show mark smile at top
+    
     e "Man, the mall is so much fun. I missed doing this because I don't have a vehicle on campus."
+    
+    hide mark neutral
+    show mark talking at top
     
     mark "Yeah, too bad we couldn't make it to Kentucky. Sorry about not having gas and being broke."
     
+    hide mark talking
+    show mark smile at top
+    
     e "All good, this place is great and the FKC is fine here!"
+    
+    hide mark neutral
+    show mark talking at top
     
     mark "I spent all my money on FKC, so that's why!"
     
+    hide mark talking
+    show mark smile at top
+    
     e "Wow Mark, I'm gonna miss you when you graduate."
+    
+    hide mark neutral
+    show mark talking at top
     
     mark "Yeah, alright. Let's get walking around the mall before we leave."
     
+    hide mark talking
+    show mark smile at top
+    
     e "Yessir."
+    
+    hide mark neutral
 
     jump dinnerDay2
     
@@ -1256,12 +1602,22 @@ label afternoonDay2Mark:
 label afternoonDay2Brooks:
 
     show dcOutside with Dissolve(.5)
+    
+    show brooks smile at top
 
     e "Hi Brooks! What do you wanna do?"
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Oh hey. I was thinking we could just chill in the lounge or somewhere quiet."
     
+    hide brooks talking
+    show brooks smile at top
+    
     e "Yeah, lets do that."
+    
+    hide brooks smile
 
     show blackscreen with Dissolve(.5)
     
@@ -1271,13 +1627,27 @@ label afternoonDay2Brooks:
     
     e "So that's why you went to Wright 2 out of all the other choices."
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Yep, and I'm glad I did! It is simply the best floor...oh! Look at the time."
+    
+    hide brooks talking
+    show brooks smile at top
     
     e "Dinner already? Wow that time flew by."
     
+    hide brooks smile
+    show brooks talking at top
+    
     brooks "Yeah, let's go together."
     
+    hide brooks talking
+    show brooks smile at top
+    
     e "Ok!"
+    
+    hide brooks smile
 
     jump dinnerDay2
     
@@ -1286,27 +1656,40 @@ label afternoonDay2Brooks:
 label dinnerDay2:
 
     show dcOutside with Dissolve(.5)
+    
+    show caleb neutral at top
+    show trent neutral at right
 
     e "Oh hey! You going to dinner?"
     
+    hide caleb neutral
+    show caleb talking at top
+    
     caleb "Yeah we were just go..."
+    
+    hide trent neutral
+    show trent talking at right
     
     trent "Wanna sit with us?"
 
     menu:
         "Dinner with Brooks, John and Cody":
             e "No, sorry, I already told these guys I would eat with them! Thanks though."
+            hide caleb talking
+            hide trent talking
             jump dinnerDay2BJC
         
         "Dinner with Caleb and Trent":
             e "Sure!"
-            
+            hide trent talking
+            hide caleb talking
             jump dinnerDay2CTC
             
         "FKC with Mark":
             e "I'm actually gonna go find Mark and go with him!"
-            
+            hide trent talking
             caleb "Uhhhh...alrighty then..."
+            hide caleb talking
             jump FKCDay2Dinner
             
     return
@@ -1318,28 +1701,58 @@ label dinnerDay2BJC:
     "..."
     
     show dcTables with Dissolve(.5)
+    
+    show brooks talking at left
+    show cody neutral at top
+    show john neutral at right
 
     brooks "Yeah, we have a trebs concert next week if you would like to join!"
     
+    hide brooks talking
+    show brooks neutral at left
+    
     e "I think I'll pass on this one, thank you though."
+    
+    hide cody neutral
+    show cody talking at top
     
     cody "What's the problem, you're only the wrong gender!"
     
+    hide cody talking
+    show cody smile at top
+    hide john neutral
+    show john smile at right
+    
     e "Exaaactly."
+    
+    hide john smile
+    show john talking at right
     
     john "Alright, let's bust this DC joint and get outta here."
 
     menu:
         "Evening stroll with Brooks":
+            hide john talking
+            hide cody smile
             e "Hey Brooks, wanna go on a walk?"
+            $ walker = "brooks"
+            hide brooks neutral
             jump walkDay2
             
         "Evening stroll with John":
+            hide brooks neutral
+            hide cody smile
             e "Hey John, wanna go on a walk?"
+            $ walker = "john"
+            hide john talking
             jump walkDay2
             
         "Evening stroll with Cody":
+            hide brooks neutral
+            hide john talking
             e "Hey Cody, wanna go on a walk?"
+            $ walker = "cody"
+            hide cody smile
             jump walkDay2
             
     return
@@ -1352,49 +1765,75 @@ label dinnerDay2CTC:
 
     show dcTables with Dissolve(.5)
     
+    show caleb talking at top
+    show trent neutral at left
+    
     caleb "Yeah, we have a Smash Bros. Tournament next week if you would like to join!"
     
+    hide caleb talking
+    show caleb smile at top
+    
     e "I might come watch, but I don't play. Besides, melee is more interesting to watch so I'd probably play that if anything."
+    
+    hide trent neutral
+    show trent flirt at left
     
     trent "Alright cool...hey."
     
     e "W-what?? *Blushes*"
     
+    hide trent flirt
+    show trent talking at left
+    
     trent "We're just talking."
 
     menu:
         "Evening stroll with Trent":
-            $ walker = "Trent"
+            hide caleb smile
+            $ walker = "trent"
             e "Hey Trent, wanna go on a walk?"
+            hide trent talking
             jump walkDay2
             
         "Evening stroll with Caleb":
-            $ walker = "Caleb"
+            $ walker = "caleb"
+            hide trent talking
             e "Hey Caleb, wanna go on a walk?"
+            hide caleb smile
             jump walkDay2
             
-        "Evening stroll with Cole":
-            $ walker = "Cole"
-            e "Hey Cole, wanna go on a walk?"
-            jump walkDay2
+        #"Evening stroll with Cole":
+        #    $ walker = "Cole"
+        #    e "Hey Cole, wanna go on a walk?"
+        #    jump walkDay2
             
     return
     
 label FKCDay2Dinner:
 
     show fkc with Dissolve(.5)
+    
+    show mark talking at top
 
     "MUNCH MUNCH"
     
     mark "I LOVE FKC"
     
+    hide mark talking
+    show mark embarrassed at top
+    
     e "MMMMMM"
     
     e "Hey Mark, let's go on a walk together."
     
+    hide mark embarrassed
+    show mark flirt at top
+    
     mark "OK"
     
-    $ walker = "Mark"
+    hide mark flirt
+    
+    $ walker = "mark"
 
     jump walkDay2
     
@@ -1403,10 +1842,37 @@ label FKCDay2Dinner:
 label walkDay2:
 
     show fountain with Dissolve(.5)
-
-    nar "Why isn't he saying anything?"
     
-    "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+    if walker == "brooks"
+        show brooks neutral at left
+        nar "Why isn't he saying anything?"
+        "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+        hide brooks neutral
+    if walker == "mark"
+        show mark neutral at left
+        nar "Why isn't he saying anything?"
+        "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+        hide mark neutral
+    if walker == "cody"
+        show cody neutral at left
+        nar "Why isn't he saying anything?"
+        "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+        hide cody neutral
+    if walker == "john"
+        show john neutral at left
+        nar "Why isn't he saying anything?"
+        "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+        hide john neutral
+    if walker == "caleb"
+        show caleb neutral at left
+        nar "Why isn't he saying anything?"
+        "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+        hide caleb neutral
+    if walker == "trent"
+        show trent neutral at left
+        nar "Why isn't he saying anything?"
+        "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
+        hide trent neutral
 
     jump smashBros
     
@@ -1415,12 +1881,29 @@ label walkDay2:
 label smashBros:
 
     show lounge with Dissolve(.5)
+    
+    show caleb talking at top
+    show trent neutral at left
+    show john neutral at right
 
     caleb "Alright, practicing in some big free for alls! The best way to warm up."
     
+    hide caleb talking
+    show caleb neutral at top
+    hide trent neutral
+    show trent talking at left
+    
     trent "We have to put items and final smash on for the tournament practice."
     
+    hide john neutral
+    show john talking at right
+    
     john "Looks good to me, pick jungle japes and lets get playing."
+    
+    hide john talking
+    hide trent talking
+    show john neutral at right
+    show trent neutral at left
     
     "..."
     
@@ -1428,9 +1911,18 @@ label smashBros:
     
     "..."
     
+    hide john neutral
+    show john smile at right
+    
     john "Yeah, I won the most!"
     
+    hide trent neutral
+    show trent smile at left
+    
     trent "Great job!"
+    
+    hide caleb neutral
+    show caleb smile at top
     
     caleb "Good games!"
     
@@ -1482,45 +1974,102 @@ label dream6:
     
 label finalScene:
 
+    #NEED TO DIVIDE THESE UP WITH POSITIONS
+
+    show brooks neutral at top
+    show caleb neutral at right
+    show trent neutral at left
+    show mark neutral at left
+    show john neutral at right
+    show cody neutral at top
+
     e "Hey guys."
     
+    hide brooks neutral
+    show brooks talking at top
+    
     brooks "Hey, who were you thinking of going to Church with?"
+    
+    hide brooks talking
+    show brooks neutral at top
     
     e "Uhhh, good question. This is very important, so give me a second to think..."
 
     menu:
         "Church with Brooks":
             e "Brooks, I choose you!"
+            hide caleb neutral
+            hide trent neutral
+            hide mark neutral
+            hide john neutral
+            hide cody neutral
+            hide brooks neutral
+            show brooks smile at top
             
             brooks "Alright, let's go together then!"
             jump church
             
         "Church with Cody":
             e "Cody, let's go together."
+            hide caleb neutral
+            hide trent neutral
+            hide mark neutral
+            hide john neutral
+            hide cody neutral
+            hide brooks neutral
+            show cody smile at top
             
             cody "Ok."
             jump church
             
         "Church with John":
             e "John, John, let's get going!"
+            hide caleb neutral
+            hide trent neutral
+            hide mark neutral
+            hide john neutral
+            hide cody neutral
+            hide brooks neutral
+            show john smile at top
             
             john "Alright!"
             jump church
             
         "Church with Mark":
             e "Mark, let's go and get some chicken afterwards!"
+            hide caleb neutral
+            hide trent neutral
+            hide mark neutral
+            hide john neutral
+            hide cody neutral
+            hide brooks neutral
+            show mark smile at top
             
             mark "Sounds like a plan to me!"
             jump church
             
         "Church with Caleb":
             e "Caleb, let's go."
+            hide caleb neutral
+            hide trent neutral
+            hide mark neutral
+            hide john neutral
+            hide cody neutral
+            hide brooks neutral
+            show caleb smile at top
             
             caleb "Heck yeah!"
             jump church
             
         "Church with Trent":
             e "Pineapple sauce!"
+            hide caleb neutral
+            hide trent neutral
+            hide mark neutral
+            hide john neutral
+            hide cody neutral
+            hide brooks neutral
+            show trent smile at top
             
             trent "And pancakes!"
             jump church
@@ -1530,6 +2079,7 @@ label finalScene:
 label church:
 
     "You attend Church with him and have a great time, and this is just the beginning of your future together!"
+    "..."
 
     return
             
