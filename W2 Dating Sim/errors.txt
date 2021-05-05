@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 653: Tab characters are not allowed in Ren'Py scripts.
+File "game/script.rpy", line 83: end of line expected.
+    transform left_left: pos(.605, 1.0) anchor (.5,1.0)
+                         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Mar 06 14:24:32 2021
+Wed May 05 04:34:35 2021

@@ -16,6 +16,7 @@ default walker = "Nobody"
 image eileen idle = Image("images/Miki_Casual_Smile_1_73.png")
 image eileen idle2 = Image("images/Miki_Casual_Open_Blush_73.png")
 image bg1 = Image("/images/lake/morning.jpg")
+image bgHell = Image("images/lake/night.jpg")
 image blackscreen = Image("/images/blackscreen.jpg")
 image defaultroom = Image("/images/apartment/day.jpg")
 image shClass = Image("/images/sh/shClass.png")
@@ -44,6 +45,7 @@ image brooks embarrassed = Image("/images/guys/done/brooksembarrassed.png")
 image brooks flirt = Image("/images/guys/done/brooksflirt.png")
 image brooks neutral= Image("/images/guys/done/brooksneutral.png")
 image brooks sad = Image("/images/guys/done/brookssad.png")
+image brooks shirtless = Image("/images/guys/done/brooksshirtless.png")
 image brooks smile = Image("/images/guys/done/brookssmile.png")
 image brooks surprised = Image("/images/guys/done/brookssurprised.png")
 image brooks talking = Image("/images/guys/done/brookstalking.png")
@@ -79,6 +81,33 @@ image trent sad = Image("/images/guys/done/trentsad.png")
 image trent smile = Image("/images/guys/done/trentsmile.png")
 image trent surprised = Image("/images/guys/done/trentsurprised.png")
 image trent talking = Image("/images/guys/done/trenttalking.png")
+
+image mark embarrassed = Image("/images/guys/done/markembarrassed.png")
+image mark flirt = Image("/images/guys/done/markflirt.png")
+image mark neutral = Image("/images/guys/done/markneutral.png")
+image mark sad = Image("/images/guys/done/marksad.png")
+image mark smile = Image("/images/guys/done/marksmile.png")
+image mark surprised = Image("/images/guys/done/marksurprised.png")
+image mark talking = Image("/images/guys/done/marktalking.png")
+
+transform left_left: 
+    pos(.255, 1.1) 
+    anchor (.5,1.0)
+transform right_right: 
+    pos(.705, 1.1) 
+    anchor (.5,1.0)
+transform right_right_right:
+    pos(.805, 1.1)
+    anchor (.5,1.0)
+transform left_left_left:
+    pos(.105, 1.1)
+    anchor (.5,1.0)
+transform leftish:
+    pos(.405, 1.1)
+    anchor (.5,1.0)
+transform rightish:
+    pos(.605, 1.1)
+    anchor (.5,1.0)
 
 define fade = Fade(0.5, 0.0, 0.5)
 #image overlay = Image("/images/badend2-1.png")
@@ -116,8 +145,11 @@ label start:
     hide eileen idle2
     show blackscreen with Dissolve(.5)
     stop music
-     
+    
+    play music "audio/soundEffects/alarm.mp3"
     "ALARM" "BEEP, BEEP, BEEP"
+    stop music
+    play music "audio/default.mp3"
     "THUMP"
     nar "Ugh, another day of school."
 
@@ -135,7 +167,6 @@ label breakfastDay1:
 
     show dormDorm with Dissolve(.5)
     hide blackscreen
-    play music "audio/default.mp3"
 
     nar "I guess I have to get up eventually."
     nar "Now where did I put my ID..."
@@ -156,7 +187,7 @@ label breakfastDay1:
     
     brooks "Hi there! Would you like to join me for breakfast? I know we haven't sat down to talk in a long time."
     
-    show cody sad at left
+    show cody sad at left_left
 
     nar "You see Cody sitting at a table alone out of the corner of your eye...Who do you choose to eat with?"
 
@@ -275,7 +306,7 @@ label dream1:
     show eileen idle2 at top
     #e "Me"
     
-    
+    hide eileen
     show brooks neutral at top
     
     e "Oh hey Brooks, what are you doing here?"
@@ -293,8 +324,15 @@ label dream1:
     nar "Could he really be asking me out???"
     
     hide brooks flirt
-    
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+    hide bg1
+
+    stop music
+    play music "audio/soundEffects/alarm.mp3"
     "ALARM" "BEEP, BEEP, BEEP"
+    stop music
+    play music "audio/default.mp3"
     
     nar "ughhhh...my dreaaaaam."
     
@@ -315,7 +353,7 @@ label class1Day1:
     nar "Let's see...I can sit with Brooks or I could go sit with John. I haven't seen him yet."
     
     show brooks talking at top
-    show john neutral at right
+    show john neutral at right_right
     
     brooks "Oh hey! We saved a seat for you between us if you wanted to sit here"
     
@@ -347,6 +385,9 @@ label sleepDay1Class1:
     
 label dream2:
 
+    stop music
+    play music "audio/love.mp3"
+    show bg1 with Dissolve(.5)
     show brooks embarrassed at top
 
     brooks "Yeah, so my question is, would you like to eat lunch with me right now?"
@@ -361,8 +402,15 @@ label dream2:
     brooks "Uh, you know what. S-"
     
     hide brooks talking
-    
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+    hide bg1
+
+    stop music
+    play music "audio/soundEffects/alarm.mp3"
     "ALARM" "BEEP, BEEP, BEEP"
+    stop music
+    play music "audio/default.mp3"
     
     nar "Gosh darn it, not again!"
 
@@ -455,7 +503,7 @@ label class1Day1Brooks:
     
     "..."
     
-    show mark neutral at left
+    show mark neutral at left_left
     
     e "Finally out! Oh hey, is that MARK?"
 
@@ -464,7 +512,7 @@ label class1Day1Brooks:
             e "Hey Mark, let's go to lunch!"
             
             hide mark neutral
-            show mark talking at left
+            show mark talking at left_left
             
             mark "Oh yeah sure! I'm going to FKC, meet me outside in five in my truck"
             
@@ -480,7 +528,7 @@ label class1Day1Brooks:
 label class1Day1Both:
 
     show brooks neutral at top
-    show john neutral at right
+    show john neutral at right_right
 
     e "Hey guys!"
     
@@ -490,7 +538,7 @@ label class1Day1Both:
     brooks "Hi!"
     
     hide john neutral
-    show john talking at right
+    show john talking at right_right
     
     john "Sup!"
     
@@ -502,12 +550,12 @@ label class1Day1Both:
     nar "...class is boring today"
     
     show brooks neutral at top
-    show john neutral at right
+    show john neutral at right_right
     
     e "Alright, see you guys later!"
     
     hide john neutral
-    show john talking at right
+    show john talking at right_right
     
     john "Yeah see you too."
     
@@ -609,9 +657,9 @@ label lunchDay1John:
     e "I'm good...thanks for asking!"
     
     hide john smile
-    
+    hide dcTables
     show dcTables with Dissolve(.5)
-
+    hide dcLine
     #Johns story
     show john talking at top
     
@@ -637,6 +685,10 @@ label sleepDay1Lunch:
     
 label dream3:
 
+    stop music 
+    play music "audio/love.mp3"
+    hide bg1
+    show bg1 with Dissolve(.5)
     show brooks embarrassed at top
         
     brooks "You know what, Sure! Let's call this a date."
@@ -649,8 +701,15 @@ label dream3:
     brooks "In fact, let me get down on my knee..."
     
     hide brooks flirt
-    
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+    hide bg1
+
+    stop music
+    play music "audio/soundEffects/alarm.mp3"
     "ALARM" "BEEP, BEEP, BEEP"
+    stop music
+    play music "audio/default.mp3"
     
     nar "NOOOOOOOOOOOOOOOOOOOOOOOO!"
 
@@ -673,8 +732,8 @@ label class2Day1:
     
     nar "let's see...is anyone I know here?"
     
-    show brooks neutral at right
-    show cody neutral at left
+    show brooks neutral at right_right
+    show cody neutral at left_left
     show trent neutral at top
     
     nar "Oh! There's Cody over there, and Brooks on the other side. And of course, Trent in the middle up front."
@@ -800,6 +859,9 @@ label class2Day1Trent:
     
 label sleepDay1Class2:
 
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+
     nar "Ah, no dreams, that sucks. Come on and show me the end of BROOKS AND I."
 
     menu:
@@ -859,11 +921,14 @@ label walkDay1:
     
     hide caleb neutral
     
+    hide blackscreen
     show blackscreen with Dissolve(.5)
 
     nar "You two walk for awhile in complete silence, until you finally reach the end."
     
+    hide fountain
     show fountain with Dissolve(.5)
+    hide blackscreen
 
     show caleb talking at top
 
@@ -877,6 +942,9 @@ label walkDay1:
     
 label sleepDay1Walk:
 
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+
     nar "Why AM I NOT DREAMING!"
 
     menu:
@@ -889,6 +957,8 @@ label sleepDay1Walk:
     return
     
 label dinnerDay1:
+
+    hide blackscreen
 
     show dcOutside with Dissolve(.5)
 
@@ -918,7 +988,7 @@ label FKCDay1:
     mark "I know you do baby. After all, who doesn't love some fried chicken?"
     
     hide mark flirt
-    
+    hide fkc
     show fkc with Dissolve(.5)
     
     show mark smile at top
@@ -951,28 +1021,28 @@ label dinnerDay1BCJ:
 
     show dcLine with Dissolve(.5)
     
-    show cody neutral at left
-    show brooks neutral at right
+    show cody neutral at left_left
+    show brooks neutral at right_right
 
     e "Wow, I wonder what they have today!"
     
     hide cody neutral
-    show cody talking at left
+    show cody talking at left_left
     
     cody "Probably nothing good, it is the DC after all."
     
     hide cody talking
-    show cody neutral at left
+    show cody neutral at left_left
     
     e "Now Cody, the DC isn't THAT bad."
     
     hide brooks neutral
-    show brooks talking at right
+    show brooks talking at right_right
     
     brooks "Yes it is."
     
     hide brooks talking
-    show brooks neutral at right
+    show brooks neutral at right_right
     
     e "Oh yeah, you're right Brooks...it is unbearable after all."
     
@@ -986,13 +1056,13 @@ label dinnerDay1BCJ:
     show john smile at top
     hide brooks neutral
     hide cody neutral
-    show brooks smile at right
-    show cody smile at left
+    show brooks smile at right_right
+    show cody smile at left_left
     
     e "Haha! Nice!"
     
     hide brooks smile
-    show brooks talking at right
+    show brooks talking at right_right
     
     brooks "Oh shoot, look at the time! We really have to go. We were gonna watch a scary movie. You joining?"
     
@@ -1015,8 +1085,8 @@ label dinnerDay1CT:
 
     show dcTables with Dissolve(.5)
     
-    show caleb neutral at left
-    show trent neutral at right
+    show caleb neutral at left_left
+    show trent neutral at right_right
 
     "They say nothing, but gnaw on their food and stare at you."
     
@@ -1042,23 +1112,36 @@ label sleepDay1Dinner:
     
 label dream4:
 
+    stop music
+    play music "audio/love.mp3"
+
+    show bg1 with Dissolve(.5)
     show john smile at top
 
     john "I'm elmo, and I'm not your friend!"
     
+    show bgHell with Dissolve(.5)
+    stop music
     hide john smile
     show john surprised at top
-    
+
     john "Come here so I can gut you like a fish!"
     
     e "AHHHHH"
     
     hide john surprised
     
+    play music "audio/soundEffects/alarm.mp3"
     "ALARM" "BEEP, BEEP, BEEP"
-    
+    stop music
+    play music "audio/default.mp3"
+
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+
     e "WHAT THE FRICK WAS THAT!"
     e "THAT DREAM SUCKED!"
+
 
     menu:
         "Watch a scary movie":
@@ -1076,15 +1159,17 @@ label movieDay1:
 
     e "It's kinda cold down here."
     
-    show brooks talking at right
+    show brooks talking at right_right
 
     brooks "Do you want my blanket? I'm not using it."
 
     e "Sure, thanks Brooks!"
     
     hide brooks talking
-
+    hide blackscreen
+    
     show blackscreen with Dissolve(.5)
+    hide beckerTheater
 
     nar "..."
     nar "..."
@@ -1100,42 +1185,42 @@ label movieDay1:
     menu:
         "Cling to Brooks":
             $ clingee = "Brooks"
-            show brooks smile at right
+            show brooks smile at right_right
             nar "You cling to Brooks, and he seems happy. You enjoy the rest of the movie together."
             hide brooks smile
             jump movieDay1Cling
         
         "Cling to Caleb":
             $ clingee = "Caleb"
-            show caleb smile at right
+            show caleb smile at right_right
             nar "You cling to Caleb, and he seems happy. You enjoy the rest of the movie together."
             hide caleb smile
             jump movieDay1Cling
             
         "Cling to Cody":
             $ clingee = "Cody"
-            show cody smile at right
+            show cody smile at right_right
             nar "You cling to Cody, and he seems happy. You enjoy the rest of the movie together."
             hide cody smile
             jump movieDay1Cling
             
         "Cling to Trent":
             $ clingee = "Trent"
-            show trent smile at right
+            show trent smile at right_right
             nar "You cling to Trent, and he seems happy. You enjoy the rest of the movie together."
             hide trent smile
             jump movieDay1Cling
             
         "Cling to Mark":
             $ clingee = "Mark"
-            show mark smile at right
+            show mark smile at right_right
             nar "You cling to Mark, and he seems happy. You enjoy the rest of the movie together."
             hide mark smile
             jump movieDay1Cling
             
         "Cling to John":
             $ clingee = "John"
-            show john smile at right
+            show john smile at right_right
             nar "You cling to John, and he seems happy. You enjoy the rest of the movie together."
             hide john smile
             jump movieDay1Cling
@@ -1144,6 +1229,7 @@ label movieDay1:
     
 label movieDay1Cling:
 
+    hide blackscreen
     show blackscreen with Dissolve(.5)
 
     nar "What a long day, I suppose it is time for bed."
@@ -1205,7 +1291,10 @@ label blanketReturn:
     nar "..."
     nar "He still hasn't answered..."
     
-    show brooks shirtless at left
+    stop music
+    play music "audio/love.mp3"
+
+    show brooks shirtless at left_left
     
     brooks "Oh hey. What are you doing up here? You aren't supposed to be on our floor."
     nar "No way. Brooks, fresh out of the shower, and shirtless! I can't believe this!"
@@ -1215,7 +1304,9 @@ label blanketReturn:
     e "Cya later"
     
     hide brooks shirtless
-    
+    stop music
+    play music "audio/default.mp3"
+
     nar "Oh my gosh I can't believe that just happened! Now I can think about that while I do all of my homework."
 
     jump homeworkDay2
@@ -1239,25 +1330,28 @@ label homeworkDay2:
     return
     
 label lunchDay2:
-
-    show dcOutside Dissolve(.5)
+    hide dcOutside
+    show dcOutside with Dissolve(.5)
+    hide dormDorm
 
     nar "I doubt anyone will be here to eat with me this late."
 
-    show dcLine Dissolve(.5)
-    
-    show brooks talking at right
+    hide dcLine
+    show dcLine with Dissolve(.5)
+    hide dcOutside
+
+    show brooks talking at right_right
 
     brooks "Hey, isn't it a little ate to eat lunch?"
     
     hide brooks talking
-    show brooks smile at right
-    show cody smile at left
+    show brooks smile at right_right
+    show cody smile at left_left
     
     e "No way, you guys are all here?"
     
     hide cody smile
-    show cody talking at left
+    show cody talking at left_left
     
     cody "Yeah, lost track of time. We all have different things to do, but feel free to join whoever."
     
@@ -1266,37 +1360,37 @@ label lunchDay2:
 
     menu:
         "Lunch with Brooks":
-            show cody sad at left
+            show cody sad at left_left
             "I'll go with Brooks!"
             hide cody sad
             jump lunchDay2Brooks
         
         "Lunch with Caleb":
-            show cody sad at left
+            show cody sad at left_left
             "I'll go with Caleb!"
             hide cody sad
             jump lunchDay2Caleb
         
         "Lunch with Cody":
-            show cody surprised at left
+            show cody surprised at left_left
             "I'll go with Cody!"
             hide cody surprised
             jump lunchDay2Cody
         
         "Lunch with Trent":
-            show cody sad at left
+            show cody sad at left_left
             "I'll go with Trent!"
             hide cody sad
             jump lunchDay2Trent
         
         "FKC with Mark":
-            show cody sad at left
+            show cody sad at left_left
             "I'll go with Mark!"
             hide cody sad
             jump FKCDay2Lunch
         
         "Lunch with John":
-            show cody sad at left
+            show cody sad at left_left
             "I'll go with John!"
             hide cody sad
             jump lunchDay2John
@@ -1326,6 +1420,7 @@ label lunchDay2Brooks:
     
     e "Great!"
     
+    hide dcTables
     show dcTables with Dissolve(.5)
     
     hide brooks smile
@@ -1388,6 +1483,7 @@ label lunchDay2Caleb:
     
     hide caleb sad
     
+    hide dcTables
     show dcTables with Dissolve(.5)
 
     nar "Guess I'll eat alone since Cynthia left."
@@ -1411,6 +1507,7 @@ label lunchDay2Cody:
     
     cody "I mean it's lunch, but ok."
 
+    hide dcTables
     show dcTables with Dissolve(.5)
     
     hide cody embarrassed
@@ -1438,6 +1535,7 @@ label lunchDay2Cody:
     
 label lunchDay2Trent:
 
+    hide dcTables
     show dcTables with Dissolve(.5)
     
     show trent talking at top
@@ -1469,6 +1567,7 @@ label lunchDay2Trent:
     
 label FKCDay2Lunch:
 
+    hide fkc
     show fkc with Dissolve(.5)
 
     "..."
@@ -1504,6 +1603,7 @@ label FKCDay2Lunch:
     
 label lunchDay2John:
 
+    hide dcTables
     show dcTables with Dissolve(.5)
 
     "..."
@@ -1601,6 +1701,7 @@ label afternoonDay2Mark:
     
 label afternoonDay2Brooks:
 
+    hide dcOutside
     show dcOutside with Dissolve(.5)
     
     show brooks smile at top
@@ -1619,11 +1720,13 @@ label afternoonDay2Brooks:
     
     hide brooks smile
 
+    hide blackscreen
     show blackscreen with Dissolve(.5)
     
     "..."
 
-    show lounge with Dissolve(.5)
+    hide dormLounge
+    show dormLounge with Dissolve(.5)
     
     e "So that's why you went to Wright 2 out of all the other choices."
     
@@ -1655,10 +1758,11 @@ label afternoonDay2Brooks:
     
 label dinnerDay2:
 
+    hide dcOutside
     show dcOutside with Dissolve(.5)
     
     show caleb neutral at top
-    show trent neutral at right
+    show trent neutral at right_right
 
     e "Oh hey! You going to dinner?"
     
@@ -1668,7 +1772,7 @@ label dinnerDay2:
     caleb "Yeah we were just go..."
     
     hide trent neutral
-    show trent talking at right
+    show trent talking at right_right
     
     trent "Wanna sit with us?"
 
@@ -1696,20 +1800,22 @@ label dinnerDay2:
     
 label dinnerDay2BJC:
 
+    hide blackscreen
     show blackscreen with Dissolve(.5)
 
     "..."
     
+    hide dcTables
     show dcTables with Dissolve(.5)
     
-    show brooks talking at left
+    show brooks talking at left_left
     show cody neutral at top
-    show john neutral at right
+    show john neutral at right_right
 
     brooks "Yeah, we have a trebs concert next week if you would like to join!"
     
     hide brooks talking
-    show brooks neutral at left
+    show brooks neutral at left_left
     
     e "I think I'll pass on this one, thank you though."
     
@@ -1721,12 +1827,12 @@ label dinnerDay2BJC:
     hide cody talking
     show cody smile at top
     hide john neutral
-    show john smile at right
+    show john smile at right_right
     
     e "Exaaactly."
     
     hide john smile
-    show john talking at right
+    show john talking at right_right
     
     john "Alright, let's bust this DC joint and get outta here."
 
@@ -1759,14 +1865,16 @@ label dinnerDay2BJC:
     
 label dinnerDay2CTC:
 
+    hide blackscreen
     show blackscreen with Dissolve(.5)
 
     "..."
 
+    hide dcTables
     show dcTables with Dissolve(.5)
     
     show caleb talking at top
-    show trent neutral at left
+    show trent neutral at left_left
     
     caleb "Yeah, we have a Smash Bros. Tournament next week if you would like to join!"
     
@@ -1776,14 +1884,14 @@ label dinnerDay2CTC:
     e "I might come watch, but I don't play. Besides, melee is more interesting to watch so I'd probably play that if anything."
     
     hide trent neutral
-    show trent flirt at left
+    show trent flirt at left_left
     
     trent "Alright cool...hey."
     
     e "W-what?? *Blushes*"
     
     hide trent flirt
-    show trent talking at left
+    show trent talking at left_left
     
     trent "We're just talking."
 
@@ -1811,6 +1919,7 @@ label dinnerDay2CTC:
     
 label FKCDay2Dinner:
 
+    hide fkc
     show fkc with Dissolve(.5)
     
     show mark talking at top
@@ -1841,35 +1950,36 @@ label FKCDay2Dinner:
    
 label walkDay2:
 
+    hide fountain
     show fountain with Dissolve(.5)
     
-    if walker == "brooks"
-        show brooks neutral at left
+    if walker == "brooks":
+        show brooks neutral at left_left
         nar "Why isn't he saying anything?"
         "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
         hide brooks neutral
-    if walker == "mark"
-        show mark neutral at left
+    if walker == "mark":
+        show mark neutral at left_left
         nar "Why isn't he saying anything?"
         "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
         hide mark neutral
-    if walker == "cody"
-        show cody neutral at left
+    if walker == "cody":
+        show cody neutral at left_left
         nar "Why isn't he saying anything?"
         "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
         hide cody neutral
-    if walker == "john"
-        show john neutral at left
+    if walker == "john":
+        show john neutral at left_left
         nar "Why isn't he saying anything?"
         "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
         hide john neutral
-    if walker == "caleb"
-        show caleb neutral at left
+    if walker == "caleb":
+        show caleb neutral at left_left
         nar "Why isn't he saying anything?"
         "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
         hide caleb neutral
-    if walker == "trent"
-        show trent neutral at left
+    if walker == "trent":
+        show trent neutral at left_left
         nar "Why isn't he saying anything?"
         "You walk in complete silence the entire way, and arrive at the lounge at the very end of your walk."
         hide trent neutral
@@ -1880,30 +1990,33 @@ label walkDay2:
     
 label smashBros:
 
-    show lounge with Dissolve(.5)
+    stop music
+    play music "audio/soundEffects/melee.mp3"
+    hide dormLounge
+    show dormLounge with Dissolve(.5)
     
     show caleb talking at top
-    show trent neutral at left
-    show john neutral at right
+    show trent neutral at left_left
+    show john neutral at right_right
 
     caleb "Alright, practicing in some big free for alls! The best way to warm up."
     
     hide caleb talking
     show caleb neutral at top
     hide trent neutral
-    show trent talking at left
+    show trent talking at left_left
     
     trent "We have to put items and final smash on for the tournament practice."
     
     hide john neutral
-    show john talking at right
+    show john talking at right_right
     
     john "Looks good to me, pick jungle japes and lets get playing."
     
     hide john talking
     hide trent talking
-    show john neutral at right
-    show trent neutral at left
+    show john neutral at right_right
+    show trent neutral at left_left
     
     "..."
     
@@ -1912,12 +2025,12 @@ label smashBros:
     "..."
     
     hide john neutral
-    show john smile at right
+    show john smile at right_right
     
     john "Yeah, I won the most!"
     
     hide trent neutral
-    show trent smile at left
+    show trent smile at left_left
     
     trent "Great job!"
     
@@ -1932,12 +2045,14 @@ label smashBros:
     
     e "Night."
 
+    stop music
     jump sleepDay2Night
     
     return
     
 label sleepDay2Night:
 
+    hide dormDorm
     show dormDorm with Dissolve(.5)
 
     nar "Oh, Church is tomorrow...I wonder who I should ask to go with me"
@@ -1952,6 +2067,9 @@ label sleepDay2Night:
     
 label dream6:
 
+    hide blackscreen
+    show blackscreen with Dissolve(.5)
+
     nar "Who should I go with to Church tomorrow..."
     
     nar "I mean, it has to be someone I like, it's basically asking them out."
@@ -1962,8 +2080,10 @@ label dream6:
 
     nar "I can't wait."
     
+    play music "audio/soundEffects/alarm.mp3"
     "ALARM" "BEEP BEEP BEEP"
-    
+    stop music
+
     nar "Well, for once my dream was accurate."
     
     nar "Here I go."
@@ -1975,13 +2095,23 @@ label dream6:
 label finalScene:
 
     #NEED TO DIVIDE THESE UP WITH POSITIONS
+    hide dormHallway
+    show dormHallway with Dissolve(.5)
 
-    show brooks neutral at top
-    show caleb neutral at right
-    show trent neutral at left
-    show mark neutral at left
-    show john neutral at right
-    show cody neutral at top
+    play music "audio/love.mp3"
+    hide cody
+    hide brooks
+    hide caleb
+    hide trent
+    hide mark
+    hide john
+
+    show cody neutral at leftish
+    show caleb neutral at right_right
+    show trent neutral at left_left
+    show mark neutral at left_left_left
+    show john neutral at right_right_right
+    show brooks neutral at rightish
 
     e "Hey guys."
     
